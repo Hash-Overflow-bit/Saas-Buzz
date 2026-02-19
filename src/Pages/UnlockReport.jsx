@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./UnlockReport.css";
 
-function Login() {
+function UnlockReport() {
   const {
     register,
     handleSubmit,
@@ -17,55 +17,71 @@ function Login() {
   };
 
   return (
-    <div className="login-main-container">
+    <div className="unlockreport-main-container">
       {/* effect images-container */}
-      <div className="effects-img-main-container">
-        <div className="top-effect">
+      <div className="unlockreport-effects-img-main-container">
+        <div className="unlockreport-top-effect">
           <img
             src="/Images/top-left.svg"
             alt="top-left"
-            className="top-left-img"
+            className="unlockreport-top-left-img"
           />
         </div>
 
-        <div className="left-middle-effect">
+        <div className="unlockreport-left-middle-effect">
           <img src="/public/Images/left middle.svg" alt="" />
         </div>
 
-        <div className="right-middle-effect">
+        <div className="unlockreport-right-middle-effect">
           <img src="/public/Images/right.svg" alt="" />
         </div>
       </div>
 
-      {/* Login-form */}
+      {/* UnlockReport-form */}
 
-      <div className="form-main-container">
-        <div className="form-heading">Welcome back</div>
+      <div className="unlockreport-form-main-container">
+        <div className="unlockreport-form-heading">Unlock You Free Report</div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="login-form">
-          <div className="google-auth-containe">
-            <button className="auth">
-              <img
-                src="/Images/google.svg"
-                alt="Google Logo"
-                width={20.25}
-                height={20.25}
+        <form onSubmit={handleSubmit(onSubmit)} className="unlockreport-form">
+          <div className="unlockreport-form-group">
+            <div className="unlockreport-input-wrapper">
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                {...register("name", {
+                  required: "Name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Name must be at least 2 characters",
+                  },
+                })}
               />
-              <span>Login With Google</span>
-            </button>
-
-            {/* divider */}
-
-            <div className="divider">
-              <span>or</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#999"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="unlockreport-input-icon"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" fill="black" stroke="none" />
+              </svg>
             </div>
-
-            {/* inputs */}
+            {errors.name && (
+              <span className="unlockreport-error-msg">
+                {errors.name.message}
+              </span>
+            )}
           </div>
 
-          <div className="form-group">
-            {/* <label htmlFor="email">Email</label> */}
-            <div className="input-wrapper">
+          <div className="unlockreport-form-group">
+            <div className="unlockreport-input-wrapper">
               <input
                 type="email"
                 id="email"
@@ -81,23 +97,24 @@ function Login() {
               <img
                 src="/Images/Mail.svg"
                 alt="Mail icon"
-                className="input-icon"
+                className="unlockreport-input-icon"
                 width="18"
                 height="18"
               />
             </div>
             {errors.email && (
-              <span className="error-msg">{errors.email.message}</span>
+              <span className="unlockreport-error-msg">
+                {errors.email.message}
+              </span>
             )}
           </div>
 
-          <div className="form-group">
-            {/* <label htmlFor="password">Password</label> */}
-            <div className="input-wrapper">
+          <div className="unlockreport-form-group">
+            <div className="unlockreport-input-wrapper">
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
-                placeholder="Enter your password"
+                placeholder="Create a password"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -108,7 +125,7 @@ function Login() {
               />
               <button
                 type="button"
-                className="eye-icon-btn"
+                className="unlockreport-eye-icon-btn"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? (
@@ -146,32 +163,19 @@ function Login() {
               </button>
             </div>
             {errors.password && (
-              <span className="error-msg">{errors.password.message}</span>
+              <span className="unlockreport-error-msg">
+                {errors.password.message}
+              </span>
             )}
           </div>
 
-          {/* Forget password link */}
-          <div className="forget-password-container">
-            <p>
-              <Link to="/forgot-password" className="text-blue-500 underline">
-                Forgot you password?
-              </Link>
-            </p>
-          </div>
-
-          <button type="submit" className="submit-btn">
-            Login
+          <button type="submit" className="unlockreport-submit-btn">
+            <p>Unlock Report</p>
           </button>
         </form>
-
-        <div className="dont-have-account-container ">
-          <p>
-            Don't have an account? <Link to="/signup">Create an account</Link>
-          </p>
-        </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default UnlockReport;

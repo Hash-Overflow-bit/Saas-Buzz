@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./Signup.css";
 
-function Login() {
+function Signup() {
   const {
     register,
     handleSubmit,
+
     formState: { errors },
   } = useForm();
 
@@ -17,55 +18,54 @@ function Login() {
   };
 
   return (
-    <div className="login-main-container">
+    <div className="signup-main-container">
       {/* effect images-container */}
-      <div className="effects-img-main-container">
-        <div className="top-effect">
+      <div className="signup-effects-img-main-container">
+        <div className="signup-top-effect">
           <img
             src="/Images/top-left.svg"
             alt="top-left"
-            className="top-left-img"
+            className="signup-top-left-img"
           />
         </div>
 
-        <div className="left-middle-effect">
+        <div className="signup-left-middle-effect">
           <img src="/public/Images/left middle.svg" alt="" />
         </div>
 
-        <div className="right-middle-effect">
+        <div className="signup-right-middle-effect">
           <img src="/public/Images/right.svg" alt="" />
         </div>
       </div>
 
-      {/* Login-form */}
+      {/* Signup-form */}
 
-      <div className="form-main-container">
-        <div className="form-heading">Welcome back</div>
+      <div className="signup-form-main-container">
+        <div className="signup-form-heading">Get Started in Seconds</div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="login-form">
-          <div className="google-auth-containe">
-            <button className="auth">
+        <form onSubmit={handleSubmit(onSubmit)} className="signup-form">
+          <div className="signup-google-auth-containe">
+            <button className="signup-auth" type="button">
               <img
                 src="/Images/google.svg"
                 alt="Google Logo"
                 width={20.25}
                 height={20.25}
               />
-              <span>Login With Google</span>
+              <span>Sign up With Google</span>
             </button>
 
             {/* divider */}
 
-            <div className="divider">
+            <div className="signup-divider">
               <span>or</span>
             </div>
 
             {/* inputs */}
           </div>
 
-          <div className="form-group">
-            {/* <label htmlFor="email">Email</label> */}
-            <div className="input-wrapper">
+          <div className="signup-form-group">
+            <div className="signup-input-wrapper">
               <input
                 type="email"
                 id="email"
@@ -81,23 +81,22 @@ function Login() {
               <img
                 src="/Images/Mail.svg"
                 alt="Mail icon"
-                className="input-icon"
+                className="signup-input-icon"
                 width="18"
                 height="18"
               />
             </div>
             {errors.email && (
-              <span className="error-msg">{errors.email.message}</span>
+              <span className="signup-error-msg">{errors.email.message}</span>
             )}
           </div>
 
-          <div className="form-group">
-            {/* <label htmlFor="password">Password</label> */}
-            <div className="input-wrapper">
+          <div className="signup-form-group">
+            <div className="signup-input-wrapper">
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
-                placeholder="Enter your password"
+                placeholder="Create a password"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -108,7 +107,7 @@ function Login() {
               />
               <button
                 type="button"
-                className="eye-icon-btn"
+                className="signup-eye-icon-btn"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? (
@@ -146,32 +145,35 @@ function Login() {
               </button>
             </div>
             {errors.password && (
-              <span className="error-msg">{errors.password.message}</span>
+              <span className="signup-error-msg">
+                {errors.password.message}
+              </span>
             )}
           </div>
 
-          {/* Forget password link */}
-          <div className="forget-password-container">
-            <p>
-              <Link to="/forgot-password" className="text-blue-500 underline">
-                Forgot you password?
-              </Link>
-            </p>
-          </div>
-
-          <button type="submit" className="submit-btn">
-            Login
+          <button type="submit" className="signup-submit-btn">
+            <p>Sign Up</p>
           </button>
         </form>
 
-        <div className="dont-have-account-container ">
+        <div className="signup-policy-container">
           <p>
-            Don't have an account? <Link to="/signup">Create an account</Link>
+            By creating account you agree to our{" "}
+            <span className="signup-policy-link">Terms</span> &{" "}
+            <span className="signup-policy-link">Privacy Policy</span>
           </p>
         </div>
+
+         <div className="already-have-account-container ">
+                  <p>
+                  Already have an account ? <Link to="/Login">Sign in</Link>
+                  </p>
+                </div>
+
+
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Signup;

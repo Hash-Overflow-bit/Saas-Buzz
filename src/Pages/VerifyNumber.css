@@ -1,13 +1,12 @@
-.login-main-container {
+.verifynumber-main-container {
     margin: 0rem;
     width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;
-
 }
 
-.top-left-img {
+.verifynumber-top-left-img {
     position: absolute;
     width: 928px;
     height: 473px;
@@ -16,20 +15,15 @@
     opacity: 1;
     border: 1px;
     z-index: 1;
-    /* border:1px solid; */
     Transform: rotate(-30.1deg);
-
-
 }
 
-.left-middle-effect {
+.verifynumber-left-middle-effect {
     width: 10rem;
     height: 1rem;
     top: 50px;
     left: -575.75px;
     opacity: 1;
-    /*border: 1px solid;
-    */
     position: absolute;
     z-index: 1;
     transform: rotate(-28.1deg);
@@ -39,13 +33,12 @@
     -o-transform: rotate(-28.1deg);
 }
 
-.right-middle-effect {
+.verifynumber-right-middle-effect {
     top: -100px !important;
     left: 450px;
     position: absolute;
     z-index: 1;
     transform: rotate(-410.29deg);
-    /* border: 1px solid; */
     height: 20rem;
     opacity: 5;
     mix-blend-mode: soft-light;
@@ -55,10 +48,9 @@
     -o-transform: rotate(-410.29deg);
 }
 
+/* VerifyNumber form */
 
-/* Login form */
-
-.form-main-container {
+.verifynumber-form-main-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -70,24 +62,23 @@
     width: 512px;
     height: auto;
     padding: 1rem;
-
-
-
 }
 
-.form-heading {
+.verifynumber-form-heading {
     color: #000000;
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 22.5px;
     letter-spacing: 0;
-    width: 239px;
+    width: 364px;
     height: 25px;
     opacity: 1;
     margin-top: 2rem;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
@@ -95,90 +86,24 @@ form {
     width: 417px;
     height: auto;
     border-radius: 40px;
-    /* border: 1px solid; */
     padding-bottom: 2rem;
-
     background-color: #FFFFFF;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 
-
-    .google-auth-containe {
-        /* border: 1px solid; */
-        margin: 1.5rem 3rem 0 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .google-auth-containe button {
-        border: none;
-        cursor: pointer;
-    }
-
-    .auth {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        height: 51px;
-        width: 374px;
-        background-color: #FAFAFA;
-        border-radius: 18px !important;
-        font-family: 'Hanken Grotesk', sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 18px;
-        line-height: 22.5px;
-        letter-spacing: 0;
-        -webkit-border-radius: 18px !important;
-        -moz-border-radius: 18px !important;
-        -ms-border-radius: 18px !important;
-        -o-border-radius: 18px !important;
-    }
-
-
-
-    /* Divider */
-    .divider {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin: 10px 0;
-        width: 374px;
-    }
-
-    .divider::before,
-    .divider::after {
-        content: "";
-        flex: 1;
-        border-bottom: 1px solid #ccc;
-    }
-
-    .divider:not(:empty)::before {
-        margin-right: 10px;
-    }
-
-    .divider:not(:empty)::after {
-        margin-left: 10px;
-    }
-
-    .divider span {
-        color: #999;
-        font-size: 14px;
-        white-space: nowrap;
-    }
-
-    /* inputs */
     /* Form inputs */
-    .form-group {
+    .verifynumber-form-group {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 0.8rem;
+        margin-top: 1.5rem;
     }
 
-    .form-group label {
+    .verifynumber-form-group:first-child {
+        margin-top: 1.5rem;
+    }
+
+    .verifynumber-form-group label {
         display: block;
         font-size: 0.85rem;
         font-weight: 500;
@@ -187,7 +112,7 @@ form {
         width: 374px;
     }
 
-    .input-wrapper {
+    .verifynumber-input-wrapper {
         display: flex;
         align-items: center;
         width: 374px;
@@ -198,7 +123,7 @@ form {
         gap: 0.5rem;
     }
 
-    .input-wrapper input {
+    .verifynumber-input-wrapper input {
         flex: 1;
         border: none;
         outline: none;
@@ -213,25 +138,25 @@ form {
         height: 100%;
     }
 
-    .input-wrapper input::placeholder {
+    .verifynumber-input-wrapper input::placeholder {
         color: #999;
     }
 
-    .input-wrapper input:-webkit-autofill,
-    .input-wrapper input:-webkit-autofill:hover,
-    .input-wrapper input:-webkit-autofill:focus,
-    .input-wrapper input:-webkit-autofill:active {
+    .verifynumber-input-wrapper input:-webkit-autofill,
+    .verifynumber-input-wrapper input:-webkit-autofill:hover,
+    .verifynumber-input-wrapper input:-webkit-autofill:focus,
+    .verifynumber-input-wrapper input:-webkit-autofill:active {
         -webkit-box-shadow: 0 0 0 30px #FAFAFA inset !important;
         -webkit-text-fill-color: #333 !important;
         background-color: transparent !important;
         transition: background-color 5000s ease-in-out 0s;
     }
 
-    .input-icon {
+    .verifynumber-input-icon {
         flex-shrink: 0;
     }
 
-    .eye-icon-btn {
+    .verifynumber-eye-icon-btn {
         background: none;
         border: none;
         cursor: pointer;
@@ -241,7 +166,7 @@ form {
         flex-shrink: 0;
     }
 
-    .error-msg {
+    .verifynumber-error-msg {
         display: block;
         font-size: 0.75rem;
         color: #ff4d4d;
@@ -252,41 +177,12 @@ form {
         font-weight: 400;
     }
 
-
-    /* Forget password */
-
-    .forget-password-container {
-        display: flex;
-        width: 374px;
-        align-items: center;
-        justify-content: flex-end;
-        margin: 1rem auto 0 auto;
-    }
-
-    .forget-password-container p a {
-        color: #BABDCC;
-        font-family: 'Hanken Grotesk', sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 18px;
-        line-height: 22.5px;
-        letter-spacing: 0;
-        text-decoration: underline;
-        text-decoration-style: solid;
-        text-decoration-thickness: 6.5%;
-        text-decoration-skip-ink: auto;
-        width: 179px;
-        height: 13px;
-        opacity: 1;
-        display: inline-block;
-    }
-
     /* Submit button */
-    .submit-btn {
+    .verifynumber-submit-btn {
         width: 374px;
         height: 67px;
         border-radius: 17.25px;
-        padding: 27px 161.25px;
+        padding: 0;
         gap: 7.5px;
         opacity: 1;
         border: none;
@@ -307,60 +203,136 @@ form {
         margin: 1.5rem auto 0 auto;
     }
 
-    .submit-btn:hover {
+    .verifynumber-submit-btn p {
+        width: 100%;
+        margin: 0;
+        padding: 27px 0;
+        text-align: center;
+    }
+
+    .verifynumber-submit-btn:hover {
         background-color: #535bf2;
     }
-}
 
-/* Don't have account */
-.dont-have-account-container {
-    width: 343px;
-    height: 13px;
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto 0 auto;
-    /* border: 1px solid; */
-}
+    /* Phone Input Styles */
+    .verifynumber-verification-heading {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
 
-.dont-have-account-container p {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 22.5px;
-    letter-spacing: 0;
-    color: #000;
-}
+    .verifynumber-verification-heading p {
+        font-family: 'Hanken Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #666;
+        margin: 0;
+    }
 
-.dont-have-account-container p a {
-    color: #646cff;
-    text-decoration: none;
-}
+    .verifynumber-verification-left {
+        text-align: left;
+        max-width: 374px;
+        width: 100%;
+        margin: 1rem auto 1.5rem auto;
+    }
 
-.dont-have-account-container p a:hover {
-    text-decoration: underline;
+    .verifynumber-phone-number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .verifynumber-phone-container {
+        width: 374px;
+    }
+
+    .verifynumber-phone-rtl {
+        display: flex !important;
+        flex-direction: row-reverse !important;
+    }
+
+    .verifynumber-phone-input {
+        width: 100% !important;
+        height: 67.5px !important;
+        background-color: #FAFAFA !important;
+        border: none !important;
+        border-radius: 18px !important;
+        padding: 25px 60px 25px 21px !important;
+        font-family: 'Hanken Grotesk', sans-serif !important;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        color: #333 !important;
+        text-align: left !important;
+        
+        border: 1px solid !important;
+    }
+
+    .verifynumber-phone-button {
+        background-color: #FAFAFA !important;
+        border: none !important;
+        border-radius: 0 18px 18px 0 !important;
+        height: 67.5px !important;
+    }
+
+    .verifynumber-phone-dropdown {
+        background-color: #FAFAFA !important;
+        border: none !important;
+        border-radius: 18px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        padding: 0.5rem 0 !important;
+        font-family: 'Hanken Grotesk', sans-serif !important;
+        font-size: 16px !important;
+        color: #333 !important;
+    }
+
+    .verifynumber-phone-dropdown .search {
+        display: none !important;
+    }
+
+    .verifynumber-phone-dropdown .search-box {
+        display: none !important;
+    }
+
+    .verifynumber-phone-dropdown .country {
+        padding: 0.5rem 1rem !important;
+        font-family: 'Hanken Grotesk', sans-serif !important;
+        font-size: 16px !important;
+        color: #333 !important;
+    }
+
+    .verifynumber-phone-dropdown .country:hover {
+        background-color: #F0F0F0 !important;
+    }
+
+    .verifynumber-phone-dropdown .country.highlight {
+        background-color: #535bf2 !important;
+        color: #FFFFFF !important;
+    }
+
+    .verifynumber-phone-dropdown .country .dial-code {
+        color: #666 !important;
+        font-family: 'Hanken Grotesk', sans-serif !important;
+    }
 }
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
 /* Tablet - Large (max-width: 1024px) */
 @media (max-width: 1024px) {
-    .top-left-img {
+    .verifynumber-top-left-img {
         width: 28rem;
         height: 16rem;
         top: -400px;
         left: -300px;
     }
 
-    .right-middle-effect {
+    .verifynumber-right-middle-effect {
         left: calc(100vw - 200px);
         height: 18rem;
         opacity: 3;
     }
 
-    .left-middle-effect {
+    .verifynumber-left-middle-effect {
         left: -400px;
         width: 8rem;
     }
@@ -369,8 +341,7 @@ form {
 /* Tablet - Medium (max-width: 768px) */
 @media (max-width: 768px) {
 
-    /* Scale down background effects on tablets */
-    .top-left-img {
+    .verifynumber-top-left-img {
         width: 500px;
         height: 280px;
         top: -180px;
@@ -378,7 +349,7 @@ form {
         opacity: 0.8;
     }
 
-    .left-middle-effect {
+    .verifynumber-left-middle-effect {
         width: 6rem;
         height: 0.8rem;
         top: 100px;
@@ -386,14 +357,14 @@ form {
         opacity: 0.7;
     }
 
-    .right-middle-effect {
+    .verifynumber-right-middle-effect {
         top: 50px !important;
         left: calc(100vw - 150px);
         height: 15rem;
         opacity: 2;
     }
 
-    .form-main-container {
+    .verifynumber-form-main-container {
         top: 50%;
         height: auto;
         padding: 1rem;
@@ -406,37 +377,32 @@ form {
         padding-bottom: 1.5rem;
     }
 
-    .form-heading {
+    .verifynumber-form-heading {
         font-size: 30px;
         width: auto;
         text-align: center;
     }
 
-    .google-auth-containe {
-        margin: 1.5rem 1.5rem 0 1.5rem;
-    }
-
-    .auth,
-    .input-wrapper,
-    .submit-btn {
+    .verifynumber-input-wrapper,
+    .verifynumber-submit-btn {
         width: 90%;
         max-width: 340px;
     }
 
-    .forget-password-container {
+    .verifynumber-phone-container {
         width: 90%;
         max-width: 340px;
-        margin: 1rem auto 0 auto;
     }
 
-
+    .verifynumber-verification-left {
+        max-width: 340px;
+    }
 }
 
 /* Mobile - Large (max-width: 480px) */
 @media (max-width: 480px) {
 
-    /* Further scale down effects for mobile */
-    .top-left-img {
+    .verifynumber-top-left-img {
         width: 380px;
         height: 220px;
         top: -140px;
@@ -444,7 +410,7 @@ form {
         opacity: 0.7;
     }
 
-    .left-middle-effect {
+    .verifynumber-left-middle-effect {
         width: 5rem;
         height: 0.6rem;
         top: 150px;
@@ -452,7 +418,7 @@ form {
         opacity: 0.5;
     }
 
-    .right-middle-effect {
+    .verifynumber-right-middle-effect {
         top: 100px !important;
         right: -100px;
         left: auto;
@@ -460,7 +426,7 @@ form {
         opacity: 1.5;
     }
 
-    .form-main-container {
+    .verifynumber-form-main-container {
         width: 100%;
         padding: 0.5rem;
     }
@@ -472,74 +438,39 @@ form {
         padding-bottom: 1.5rem;
     }
 
-    .form-heading {
+    .verifynumber-form-heading {
         font-size: 26px;
         line-height: 30px;
         margin-bottom: 0.5rem;
     }
 
-    .google-auth-containe {
-        margin: 1rem 1rem 0 1rem;
-    }
-
-    .auth {
-        width: 100%;
-        max-width: 300px;
-        height: 48px;
-        font-size: 14px;
-        padding: 0 1rem;
-    }
-
-    .auth img {
-        width: 18px;
-        height: 18px;
-    }
-
-    .divider {
-        margin: 8px 0;
-    }
-
-    .divider span {
-        font-size: 13px;
-    }
-
-    .form-group {
+    .verifynumber-form-group {
         margin-bottom: 0.6rem;
     }
 
-    .form-group label {
+    .verifynumber-form-group label {
         font-size: 0.8rem;
         width: 100%;
         max-width: 300px;
     }
 
-    .input-wrapper {
+    .verifynumber-input-wrapper {
         width: 100%;
         max-width: 300px;
         height: 48px;
         padding: 0 0.8rem;
     }
 
-    .input-wrapper input {
+    .verifynumber-input-wrapper input {
         font-size: 0.85rem;
     }
 
-    .error-msg {
+    .verifynumber-error-msg {
         width: 100%;
         max-width: 300px;
     }
 
-    .forget-password-container {
-        width: 100%;
-        max-width: 300px;
-        margin: 1rem auto 0 auto;
-    }
-
-    .forget-password-container p a {
-        font-size: 15px;
-    }
-
-    .submit-btn {
+    .verifynumber-submit-btn {
         width: 100%;
         max-width: 300px;
         height: 54px;
@@ -548,21 +479,30 @@ form {
         margin: 1rem auto 0 auto;
     }
 
-    .dont-have-account-container {
+    .verifynumber-phone-container {
         width: 100%;
         max-width: 300px;
-        height: auto;
-        margin: 1rem auto 0 auto;
     }
 
+    .verifynumber-phone-input {
+        height: 48px !important;
+        font-size: 0.85rem !important;
+        padding: 20px 60px 20px 21px !important;
+    }
 
+    .verifynumber-phone-button {
+        height: 48px !important;
+    }
+
+    .verifynumber-verification-left {
+        max-width: 300px;
+    }
 }
 
-/* Mobile - Small (max-width: 375px) */
+/* Mobile - Medium (max-width: 375px) */
 @media (max-width: 375px) {
 
-    /* Adjust effects for smaller mobile screens */
-    .top-left-img {
+    .verifynumber-top-left-img {
         width: 320px;
         height: 180px;
         top: -110px;
@@ -570,7 +510,7 @@ form {
         opacity: 0.6;
     }
 
-    .left-middle-effect {
+    .verifynumber-left-middle-effect {
         width: 4rem;
         height: 0.5rem;
         top: 180px;
@@ -578,44 +518,42 @@ form {
         opacity: 0.4;
     }
 
-    .right-middle-effect {
+    .verifynumber-right-middle-effect {
         top: 120px !important;
         right: -80px;
         height: 10rem;
         opacity: 1.2;
     }
 
-    .form-heading {
+    .verifynumber-form-heading {
         font-size: 24px;
     }
 
-    .auth,
-    .input-wrapper,
-    .submit-btn,
-    .forget-password-container,
-    .dont-have-account-container,
-    .form-group label,
-    .error-msg {
+    .verifynumber-input-wrapper,
+    .verifynumber-submit-btn,
+    .verifynumber-form-group label,
+    .verifynumber-error-msg {
         max-width: 280px;
     }
 
-    .forget-password-container {
-        margin: 1rem auto 0 auto;
-    }
-
-    .submit-btn {
+    .verifynumber-submit-btn {
         padding: 18px 60px;
         font-size: 15px;
     }
 
+    .verifynumber-phone-container {
+        max-width: 280px;
+    }
 
+    .verifynumber-verification-left {
+        max-width: 280px;
+    }
 }
 
-/* Mobile - Extra Small (max-width: 320px) */
+/* Mobile - Small (max-width: 320px) */
 @media (max-width: 320px) {
 
-    /* Minimize effects for extra small screens */
-    .top-left-img {
+    .verifynumber-top-left-img {
         width: 280px;
         height: 160px;
         top: -90px;
@@ -623,7 +561,7 @@ form {
         opacity: 0.5;
     }
 
-    .left-middle-effect {
+    .verifynumber-left-middle-effect {
         width: 3rem;
         height: 0.4rem;
         top: 200px;
@@ -631,7 +569,7 @@ form {
         opacity: 0.3;
     }
 
-    .right-middle-effect {
+    .verifynumber-right-middle-effect {
         top: 150px !important;
         right: -60px;
         height: 8rem;
@@ -642,46 +580,46 @@ form {
         border-radius: 25px;
     }
 
-    .form-heading {
+    .verifynumber-form-heading {
         font-size: 22px;
     }
 
-    .google-auth-containe {
-        margin: 0.8rem 0.8rem 0 0.8rem;
-    }
-
-    .auth,
-    .input-wrapper,
-    .submit-btn,
-    .forget-password-container,
-    .dont-have-account-container,
-    .form-group label,
-    .error-msg {
+    .verifynumber-input-wrapper,
+    .verifynumber-submit-btn,
+    .verifynumber-form-group label,
+    .verifynumber-error-msg {
         max-width: 260px;
     }
 
-    .forget-password-container {
-        margin: 1rem auto 0 auto;
-    }
-
-    .auth {
-        height: 45px;
-        font-size: 13px;
-    }
-
-    .input-wrapper {
+    .verifynumber-input-wrapper {
         height: 45px;
     }
 
-    .input-wrapper input {
+    .verifynumber-input-wrapper input {
         font-size: 0.8rem;
     }
 
-    .submit-btn {
+    .verifynumber-submit-btn {
         height: 50px;
         padding: 15px 50px;
         font-size: 14px;
     }
 
+    .verifynumber-phone-container {
+        max-width: 260px;
+    }
 
+    .verifynumber-phone-input {
+        height: 45px !important;
+        font-size: 0.8rem !important;
+        padding: 18px 55px 18px 18px !important;
+    }
+
+    .verifynumber-phone-button {
+        height: 45px !important;
+    }
+
+    .verifynumber-verification-left {
+        max-width: 260px;
+    }
 }
