@@ -15,6 +15,7 @@
     opacity: 1;
     border: 1px;
     z-index: 1;
+    animation: unlockMoveTopRight 6s ease-in-out infinite alternate;
 }
 
 .unlockreport-left-middle-effect {
@@ -32,6 +33,7 @@
     -moz-transform: rotate(-28.1deg);
     -ms-transform: rotate(-28.1deg);
     -o-transform: rotate(-28.1deg);
+    animation: unlockMoveToTop 6s ease-in-out infinite alternate;
 }
 
 .unlockreport-right-middle-effect {
@@ -42,6 +44,22 @@
     height: 20rem;
     opacity: 5;
     mix-blend-mode: soft-light;
+    animation: unlockMoveBottomRight 6s ease-in-out infinite alternate;
+}
+
+@keyframes unlockMoveTopRight {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(calc(100vw - 852px), 0); }
+}
+
+@keyframes unlockMoveToTop {
+    0% { transform: rotate(-28.1deg) translate(0, 0); }
+    100% { transform: rotate(-28.1deg) translate(calc(100vw + 300px), -80px); }
+}
+
+@keyframes unlockMoveBottomRight {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(calc(100vw - 760px - 20rem), calc(100vh - 18rem)); }
 }
 
 /* UnlockReport form */
