@@ -21,20 +21,12 @@ function UnlockReport() {
       {/* effect images-container */}
       <div className="unlockreport-effects-img-main-container">
         <div className="unlockreport-top-effect">
-          <img
-            src="/Images/top-left.svg"
-            alt="top-left"
-            className="unlockreport-top-left-img"
-          />
+          <div className="unlockreport-top-left-img"></div>
         </div>
 
-        <div className="unlockreport-left-middle-effect">
-          <img src="/Images/left middle.svg" alt="" />
-        </div>
+        <div className="unlockreport-left-middle-effect"></div>
 
-        <div className="unlockreport-right-middle-effect">
-          <img src="/Images/right.svg" alt="" />
-        </div>
+        <div className="unlockreport-right-middle-effect"></div>
       </div>
 
       {/* UnlockReport-form */}

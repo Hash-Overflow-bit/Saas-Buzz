@@ -77,20 +77,12 @@ function VerifyNumber() {
       {/* effect images-container */}
       <div className="verifynumber-effects-img-main-container">
         <div className="verifynumber-top-effect">
-          <img
-            src="/Images/top-left.svg"
-            alt="top-left"
-            className="verifynumber-top-left-img"
-          />
+          <div className="verifynumber-top-left-img"></div>
         </div>
 
-        <div className="verifynumber-left-middle-effect">
-          <img src="/Images/left middle.svg" alt="" />
-        </div>
+        <div className="verifynumber-left-middle-effect"></div>
 
-        <div className="verifynumber-right-middle-effect">
-          <img src="/Images/right.svg" alt="" />
-        </div>
+        <div className="verifynumber-right-middle-effect"></div>
       </div>
 
       {/* VerifyNumber-form */}

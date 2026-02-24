@@ -22,20 +22,12 @@ function Signup() {
       {/* effect images-container */}
       <div className="signup-effects-img-main-container">
         <div className="signup-top-effect">
-          <img
-            src="/Images/top-left.svg"
-            alt="top-left"
-            className="signup-top-left-img"
-          />
+          <div className="signup-top-left-img"></div>
         </div>
 
-        <div className="signup-left-middle-effect">
-          <img src="/Images/left middle.svg" alt="" />
-        </div>
+        <div className="signup-left-middle-effect"></div>
 
-        <div className="signup-right-middle-effect">
-          <img src="/Images/right.svg" alt="" />
-        </div>
+        <div className="signup-right-middle-effect"></div>
       </div>
 
       {/* Signup-form */}

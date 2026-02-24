@@ -21,20 +21,12 @@ function Login() {
       {/* effect images-container */}
       <div className="effects-img-main-container">
         <div className="top-effect">
-          <img
-            src="/Images/top-left.svg"
-            alt="top-left"
-            className="top-left-img"
-          />
+          <div className="top-left-img"></div>
         </div>
 
-        <div className="left-middle-effect">
-          <img src="/Images/left middle.svg" alt="" />
-        </div>
+        <div className="left-middle-effect"></div>
 
-        <div className="right-middle-effect">
-          <img src="/Images/right.svg" alt="" />
-        </div>
+        <div className="right-middle-effect"></div>
       </div>
 
       {/* Login-form */}

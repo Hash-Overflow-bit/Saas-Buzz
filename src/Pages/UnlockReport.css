@@ -13,21 +13,24 @@
     top: -280.25px;
     left: -75.75px;
     opacity: 1;
-    border: 1px;
     z-index: 1;
+    background: radial-gradient(ellipse, #D5E8F4 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
     animation: unlockMoveTopRight 6s ease-in-out infinite alternate;
 }
 
 .unlockreport-left-middle-effect {
-    width: 10rem;
-    height: 1rem;
+    width: 700px;
+    height: 700px;
     top: 50px;
     left: -575.75px;
     opacity: 1;
-    /*border: 1px solid;
-    */
     position: absolute;
     z-index: 1;
+    background: radial-gradient(circle, #FEFDF0 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
     transform: rotate(-28.1deg);
     -webkit-transform: rotate(-28.1deg);
     -moz-transform: rotate(-28.1deg);
@@ -41,25 +44,43 @@
     left: 760px;
     position: absolute;
     z-index: 1;
-    height: 20rem;
-    opacity: 5;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #FEFDF0 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
     mix-blend-mode: soft-light;
     animation: unlockMoveBottomRight 6s ease-in-out infinite alternate;
 }
 
 @keyframes unlockMoveTopRight {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(calc(100vw - 852px), 0); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(calc(100vw - 852px), 0);
+    }
 }
 
 @keyframes unlockMoveToTop {
-    0% { transform: rotate(-28.1deg) translate(0, 0); }
-    100% { transform: rotate(-28.1deg) translate(calc(100vw + 300px), -80px); }
+    0% {
+        transform: rotate(-28.1deg) translate(0, 0);
+    }
+
+    100% {
+        transform: rotate(-28.1deg) translate(calc(100vw + 300px), -80px);
+    }
 }
 
 @keyframes unlockMoveBottomRight {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(calc(100vw - 760px - 20rem), calc(100vh - 18rem)); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(calc(100vw - 760px - 20rem), calc(100vh - 18rem));
+    }
 }
 
 /* UnlockReport form */

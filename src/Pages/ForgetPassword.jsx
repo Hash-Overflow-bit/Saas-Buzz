@@ -31,20 +31,12 @@ function ForgetPassword() {
       {/* effect images-container */}
       <div className="forget-effects-img-main-container">
         <div className="forget-top-effect">
-          <img
-            src="/Images/top-left.svg"
-            alt="top-left"
-            className="forget-top-left-img"
-          />
+          <div className="forget-top-left-img"></div>
         </div>
 
-        <div className="forget-left-middle-effect">
-          <img src="/Images/left middle.svg" alt="" />
-        </div>
+        <div className="forget-left-middle-effect"></div>
 
-        <div className="forget-right-middle-effect">
-          <img src="/Images/right.svg" alt="" />
-        </div>
+        <div className="forget-right-middle-effect"></div>
       </div>
 
       {/* Forget Password Form */}
