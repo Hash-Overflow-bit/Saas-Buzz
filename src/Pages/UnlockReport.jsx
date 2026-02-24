@@ -29,11 +29,11 @@ function UnlockReport() {
         </div>
 
         <div className="unlockreport-left-middle-effect">
-          <img src="/public/Images/left middle.svg" alt="" />
+          <img src="/Images/left middle.svg" alt="" />
         </div>
 
         <div className="unlockreport-right-middle-effect">
-          <img src="/public/Images/right.svg" alt="" />
+          <img src="/Images/right.svg" alt="" />
         </div>
       </div>
 

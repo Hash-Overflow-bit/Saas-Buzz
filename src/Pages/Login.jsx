@@ -29,11 +29,11 @@ function Login() {
         </div>
 
         <div className="left-middle-effect">
-          <img src="/public/Images/left middle.svg" alt="" />
+          <img src="/Images/left middle.svg" alt="" />
         </div>
 
         <div className="right-middle-effect">
-          <img src="/public/Images/right.svg" alt="" />
+          <img src="/Images/right.svg" alt="" />
         </div>
       </div>
 
@@ -153,7 +153,7 @@ function Login() {
           {/* Forget password link */}
           <div className="forget-password-container">
             <p>
-              <Link to="/forgot-password" className="text-blue-500 underline">
+              <Link to="/forgetpassword" className="text-blue-500 underline">
                 Forgot you password?
               </Link>
             </p>

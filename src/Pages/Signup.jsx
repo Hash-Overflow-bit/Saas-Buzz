@@ -30,11 +30,11 @@ function Signup() {
         </div>
 
         <div className="signup-left-middle-effect">
-          <img src="/public/Images/left middle.svg" alt="" />
+          <img src="/Images/left middle.svg" alt="" />
         </div>
 
         <div className="signup-right-middle-effect">
-          <img src="/public/Images/right.svg" alt="" />
+          <img src="/Images/right.svg" alt="" />
         </div>
       </div>
 
@@ -164,13 +164,11 @@ function Signup() {
           </p>
         </div>
 
-         <div className="already-have-account-container ">
-                  <p>
-                  Already have an account ? <Link to="/Login">Sign in</Link>
-                  </p>
-                </div>
-
-
+        <div className="already-have-account-container ">
+          <p>
+            Already have an account ? <Link to="/Login">Sign in</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

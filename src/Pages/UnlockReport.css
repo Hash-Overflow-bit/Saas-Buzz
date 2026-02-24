@@ -15,7 +15,6 @@
     opacity: 1;
     border: 1px;
     z-index: 1;
-    Transform: rotate(-30.1deg);
 }
 
 .unlockreport-left-middle-effect {
@@ -24,6 +23,8 @@
     top: 50px;
     left: -575.75px;
     opacity: 1;
+    /*border: 1px solid;
+    */
     position: absolute;
     z-index: 1;
     transform: rotate(-28.1deg);
@@ -35,17 +36,12 @@
 
 .unlockreport-right-middle-effect {
     top: -100px !important;
-    left: 450px;
+    left: 560px;
     position: absolute;
     z-index: 1;
-    transform: rotate(-410.29deg);
     height: 20rem;
     opacity: 5;
     mix-blend-mode: soft-light;
-    -webkit-transform: rotate(-410.29deg);
-    -moz-transform: rotate(-410.29deg);
-    -ms-transform: rotate(-410.29deg);
-    -o-transform: rotate(-410.29deg);
 }
 
 /* UnlockReport form */
@@ -172,6 +168,7 @@ form {
         color: #ff4d4d;
         margin-top: 0.3rem;
         width: 374px;
+        padding-left: 0.5rem;
         text-align: left;
         font-family: 'Hanken Grotesk', sans-serif;
         font-weight: 400;
@@ -267,7 +264,7 @@ form {
     .unlockreport-form-main-container {
         top: 50%;
         height: auto;
-        padding: 1rem;
+        padding: 1rem 1.5rem;
     }
 
     form {
@@ -359,6 +356,7 @@ form {
     .unlockreport-error-msg {
         width: 100%;
         max-width: 300px;
+        padding-left: 0.5rem;
     }
 
     .unlockreport-submit-btn {

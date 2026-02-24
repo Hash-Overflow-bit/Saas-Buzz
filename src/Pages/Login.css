@@ -4,7 +4,6 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-
 }
 
 .top-left-img {
@@ -17,13 +16,10 @@
     border: 1px;
     z-index: 1;
     /* border:1px solid; */
-    Transform: rotate(-30.1deg);
-
-
 }
 
 .left-middle-effect {
-    width: 10rem;
+   width: 10rem;
     height: 1rem;
     top: 50px;
     left: -575.75px;
@@ -39,20 +35,17 @@
     -o-transform: rotate(-28.1deg);
 }
 
+
 .right-middle-effect {
     top: -100px !important;
-    left: 450px;
+    left: 560px;
     position: absolute;
     z-index: 1;
-    transform: rotate(-410.29deg);
     /* border: 1px solid; */
     height: 20rem;
     opacity: 5;
     mix-blend-mode: soft-light;
-    -webkit-transform: rotate(-410.29deg);
-    -moz-transform: rotate(-410.29deg);
-    -ms-transform: rotate(-410.29deg);
-    -o-transform: rotate(-410.29deg);
+    
 }
 
 
@@ -247,6 +240,7 @@ form {
         color: #ff4d4d;
         margin-top: 0.3rem;
         width: 374px;
+        padding-left: 0.5rem;
         text-align: left;
         font-family: 'Hanken Grotesk', sans-serif;
         font-weight: 400;
@@ -396,7 +390,7 @@ form {
     .form-main-container {
         top: 50%;
         height: auto;
-        padding: 1rem;
+        padding: 1rem 1.5rem;
     }
 
     form {
@@ -418,7 +412,8 @@ form {
 
     .auth,
     .input-wrapper,
-    .submit-btn {
+    .submit-btn,
+    .divider {
         width: 90%;
         max-width: 340px;
     }
@@ -462,7 +457,7 @@ form {
 
     .form-main-container {
         width: 100%;
-        padding: 0.5rem;
+        padding: 1rem 1.5rem;
     }
 
     form {
@@ -496,6 +491,7 @@ form {
     }
 
     .divider {
+        width: 95%;
         margin: 8px 0;
     }
 
@@ -527,6 +523,7 @@ form {
     .error-msg {
         width: 100%;
         max-width: 300px;
+        padding-left: 0.5rem;
     }
 
     .forget-password-container {
@@ -592,6 +589,7 @@ form {
     .auth,
     .input-wrapper,
     .submit-btn,
+    .divider,
     .forget-password-container,
     .dont-have-account-container,
     .form-group label,
@@ -653,6 +651,7 @@ form {
     .auth,
     .input-wrapper,
     .submit-btn,
+    .divider,
     .forget-password-container,
     .dont-have-account-container,
     .form-group label,

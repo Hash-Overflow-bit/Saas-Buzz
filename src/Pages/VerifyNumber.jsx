@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import "./VerifyNumber.css";
 import PhoneInput from "react-phone-input-2";
@@ -11,11 +11,65 @@ function VerifyNumber() {
     formState: { errors },
   } = useForm();
 
+  // Create refs for OTP inputs
+  const otpRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  // State to store OTP values
+  const [otp, setOtp] = useState(["", "", "", "", ""]);
+  const [otpError, setOtpError] = useState("");
+
+  // Handle OTP input change
+  const handleOtpChange = (index, value) => {
+    // Only allow single digit
+    const newValue = value.slice(-1);
+
+    if (!/^\d*$/.test(newValue)) return; // Only allow numbers
+
+    const newOtp = [...otp];
+    newOtp[index] = newValue;
+    setOtp(newOtp);
+
+    // Clear error when user starts typing
+    if (otpError) setOtpError("");
+
+    // Auto-focus next input
+    if (newValue && index < 4) {
+      otpRefs[index + 1].current.focus();
+    }
+  };
+
+  // Handle backspace
+  const handleKeyDown = (index, e) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      otpRefs[index - 1].current.focus();
+    }
+  };
+
   // Regex to allow +, digits, spaces, dots, hyphens, parentheses
   const phoneRegex = /^\+?[\d\s().-]{6,20}$/;
 
   const onSubmit = (data) => {
-    console.log(data);
+    const otpValue = otp.join("");
+
+    // Validate OTP - check if all fields are filled
+    if (otpValue.length < 5) {
+      setOtpError("Please enter all 5 digits of the OTP code");
+      return;
+    }
+
+    // Check if OTP contains only numbers
+    if (!/^\d{5}$/.test(otpValue)) {
+      setOtpError("OTP must contain only numbers");
+      return;
+    }
+
+    console.log({ ...data, otp: otpValue });
   };
 
   return (
@@ -31,11 +85,11 @@ function VerifyNumber() {
         </div>
 
         <div className="verifynumber-left-middle-effect">
-          <img src="/public/Images/left middle.svg" alt="" />
+          <img src="/Images/left middle.svg" alt="" />
         </div>
 
         <div className="verifynumber-right-middle-effect">
-          <img src="/public/Images/right.svg" alt="" />
+          <img src="/Images/right.svg" alt="" />
         </div>
       </div>
 
@@ -72,7 +126,8 @@ function VerifyNumber() {
                 <PhoneInput
                   {...field}
                   country={"us"}
-                  enableSearch
+                  disableDropdown={true}
+                  countryCodeEditable={true}
                   inputClass="verifynumber-phone-input"
                   containerClass="verifynumber-phone-container verifynumber-phone-rtl"
                   buttonClass="verifynumber-phone-button"
@@ -91,14 +146,45 @@ function VerifyNumber() {
             <p>Enter the code we just sent you</p>
           </div>
 
-          {/* OTP innput fields */}
+          {/* OTP input fields */}
           <div className="otp-container">
-
-            
+            {otp.map((digit, index) => (
+              <input
+                key={index}
+                ref={otpRefs[index]}
+                type="text"
+                inputMode="numeric"
+                maxLength={1}
+                value={digit}
+                onChange={(e) => handleOtpChange(index, e.target.value)}
+                onKeyDown={(e) => handleKeyDown(index, e)}
+                className="otp-input"
+                style={{
+                  width: "65.25px",
+                  height: "67.5px",
+                  borderRadius: "18.75px",
+                  background: "#FAFAFA",
+                  opacity: 1,
+                  border: otpError ? "2px solid #ff4d4d" : "1px solid #E0E0E0",
+                  textAlign: "center",
+                  fontFamily: "'Hanken Grotesk', sans-serif",
+                  fontWeight: "400",
+                  fontStyle: "normal",
+                  fontSize: "48px",
+                  lineHeight: "22.5px",
+                  letterSpacing: "0%",
+                }}
+              />
+            ))}
           </div>
+          {otpError && (
+            <span className="verifynumber-error-msg otp-error-msg">
+              {otpError}
+            </span>
+          )}
 
           <button type="submit" className="verifynumber-submit-btn">
-            <p>Verify Number</p>
+            <p>Verify</p>
           </button>
         </form>
       </div>
