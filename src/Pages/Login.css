@@ -19,7 +19,7 @@
 }
 
 .left-middle-effect {
-   width: 10rem;
+    width: 10rem;
     height: 1rem;
     top: 50px;
     left: -575.75px;
@@ -38,14 +38,13 @@
 
 .right-middle-effect {
     top: -100px !important;
-    left: 560px;
+    left: 760px;
     position: absolute;
     z-index: 1;
     /* border: 1px solid; */
     height: 20rem;
     opacity: 5;
     mix-blend-mode: soft-light;
-    
 }
 
 
