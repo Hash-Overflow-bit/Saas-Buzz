@@ -1,0 +1,146 @@
+.dashboard-main-container {
+    position: relative;
+    /* important - makes it the reference point */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.BackgroundTemplateOnDashboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* behind everything */
+}
+
+.dashboard-header {
+    position: relative;
+
+    background: linear-gradient(180deg, #FDF8E5 0%, #FEFEF4 100%);
+   height: 141px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+.dashboard-header-logo {
+
+    display: flex;
+    height: 32px;
+    width: 115px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dashboard-header-logo p {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #6D4AF7;
+}
+
+.dashboard-header-action {
+
+    display: flex;
+    align-items: center;
+
+    width: 293px;
+    height: 41px;
+}
+
+.header-user-profile-container {
+
+    width: 178px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.user-dept {
+    color: #B2B0B3;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.user-profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+    font-size: 25px;
+    color: #333;
+    padding: 4px;
+}
+
+.dropdown-options {
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    right: 0;
+    width: 70px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    overflow: hidden;
+}
+
+.dropdown-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    color: #333;
+    z-index: 100;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Dashboardddddddddddd */
+
+
+.dashboard-container {
+    /* border: 1px solid; */
+    border-top-left-radius: 22.5px;
+    border-top-right-radius: 22.5px;
+    height: 100vh;
+    position: absolute;
+    top: 13%;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.greeting-user {
+
+    /* border: 1px solid; */
+    width: max-content;
+
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 21px;
+    letter-spacing: 0;
+    padding-left: 50px;
+    padding-top: 25px;
+
+}

@@ -5,6 +5,7 @@ import Signup from "./Pages/Signup";
 import UnlockReport from "./Pages/UnlockReport";
 import VerifyNumber from "./Pages/VerifyNumber";
 import ForgetPassword from "./Pages/ForgetPassword";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/unlock-report" element={<UnlockReport />} />
       <Route path="/verification" element={<VerifyNumber />}/>
       <Route path="/forgetpassword" element={<ForgetPassword/>} />
+      <Route path="/dashboard" element={<Dashboard/>}/>
     </Routes>
   );
 }

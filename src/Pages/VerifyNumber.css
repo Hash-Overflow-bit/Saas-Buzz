@@ -376,44 +376,40 @@ form {
     }
 
     .verifynumber-phone-dropdown {
-        background-color: #FAFAFA !important;
-        border: none !important;
-        border-radius: 18px !important;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-        padding: 0.5rem 0 !important;
-        font-family: 'Hanken Grotesk', sans-serif !important;
-        font-size: 16px !important;
-        color: #333 !important;
-    }
+    width: 100px !important;
+    border: none !important;
+    background-color: #FFFFFF !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    font-family: 'Hanken Grotesk', sans-serif !important;
+}
 
-    .verifynumber-phone-dropdown .search {
-        display: none !important;
-    }
+.verifynumber-phone-dropdown .search {
+    display: none !important;
+}
 
-    .verifynumber-phone-dropdown .search-box {
-        display: none !important;
-    }
+.verifynumber-phone-dropdown .search-box {
+    display: none !important;
+}
 
-    .verifynumber-phone-dropdown .country {
-        padding: 0.5rem 1rem !important;
-        font-family: 'Hanken Grotesk', sans-serif !important;
-        font-size: 16px !important;
-        color: #333 !important;
-    }
+.verifynumber-phone-dropdown .country {
+    width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0.5rem 0.75rem !important;
+    color: inherit !important;
+}
 
-    .verifynumber-phone-dropdown .country:hover {
-        background-color: #F0F0F0 !important;
-    }
+.verifynumber-phone-dropdown .country:hover,
+.verifynumber-phone-dropdown .country.highlight {
+    background: transparent !important;
+    color: inherit !important;
+}
 
-    .verifynumber-phone-dropdown .country.highlight {
-        background-color: #535bf2 !important;
-        color: #FFFFFF !important;
-    }
-
-    .verifynumber-phone-dropdown .country .dial-code {
-        color: #666 !important;
-        font-family: 'Hanken Grotesk', sans-serif !important;
-    }
+.verifynumber-phone-dropdown .country .dial-code {
+    color: inherit !important;
+}
 }
 
 /* ==================== RESPONSIVE STYLES ==================== */
@@ -725,3 +721,6 @@ form {
         max-width: 260px;
     }
 }
+
+
+
