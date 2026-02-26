@@ -15,7 +15,7 @@ function Dashboard() {
           {" "}
           <span>
             {" "}
-            <img src="public\Images\logo-icon.svg" alt="" />
+            <img src="\Images\logo-icon.svg" alt="" />
           </span>
           <p>Omega</p>
         </div>
