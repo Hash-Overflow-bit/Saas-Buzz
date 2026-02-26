@@ -23,14 +23,14 @@ function Dashboard() {
         {/* user profile action */}
         <div className="dashboard-header-action">
           <div className="header-bell-icon">
-            <img src="public\Images\bell-icon.svg" alt="bell" />
+            <img src="\Images\bell-icon.svg" alt="bell" />
           </div>
           <div className="header-msg-icon">
-            <img src="public\Images\msg-icon.svg" alt="" />
+            <img src="\Images\msg-icon.svg" alt="" />
           </div>
           <div className="header-user-profile-container">
             <div className="header-user-img">
-              <img src="public\Images\user-pfp.svg" alt="" />
+              <img src="\Images\user-pfp.svg" alt="" />
             </div>
             <div className="header-user-name">
               <p className="user-name">Alen Walker</p>
