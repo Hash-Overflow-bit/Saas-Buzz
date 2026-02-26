@@ -1,27 +1,24 @@
 /* Parent container */
 .BackgroundTemplate-main-container {
-    height: 100vh;
-    overflow: hidden;  /* THIS is the key */
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    z-index: -100;
+    width: 100%;
+    height: calc(100vh - 13vh);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-bottom-left-radius: 22.5px;
 }
-.background-template-effect
-{
-     position: absolute;
-     top: 650px;
-     left: -490px;
-     width: 880px;
-     height: 400px;
-     background-color: #D5E8F4;
-     /*border: 1px solid;
-     */transform: rotate(-65deg);
-     -webkit-transform: rotate(-55deg);
-     -moz-transform: rotate(-55deg);
-     -ms-transform: rotate(-55deg);
-     -o-transform: rotate(-55deg);
-     opacity: 50%;
-     filter: blur(30px) ;
-     -webkit-filter: blur(30px) ;
+
+.background-template-effect {
+    position: absolute;
+    left: -100px;
+    bottom: -100px;
+    width: 350px;
+    height: 350px;
+    background-color: #D5E8F4;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(50px);
+    -webkit-filter: blur(50px);
 }
