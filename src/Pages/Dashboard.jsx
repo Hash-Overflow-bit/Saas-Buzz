@@ -68,9 +68,9 @@ function Dashboard() {
         {/* Dashboard input */}
 
         <div className="dashboard-input">
-          <div className="input-wrapper">
+          <div className="dashboard-input-wrapper">
             <input type="text" placeholder="Enter the Address of the website" />
-            <button className="arrow-btn">
+            <button className="dashboard-arrow-btn">
               <img src="public\Images\arrow-btn.svg" alt="" />
             </button>
           </div>

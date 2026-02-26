@@ -19,7 +19,7 @@
 .dashboard-header {
     position: relative;
 
-    background: linear-gradient(180deg, #FDF8E5 0%, #FEFEF4 100%);
+    /* background: linear-gradient(180deg, #FDF8E5 0%, #FEFEF4 100%); */
     height: 141px;
     display: flex;
     justify-content: space-between;
@@ -160,36 +160,39 @@
     align-items: center;
 }
 
-.input-wrapper {
+.dashboard-input-wrapper {
     width: 1265px;
     height: 55px;
     border-radius: 15px;
     padding: 4.5px;
-    background: linear-gradient(90.15deg, #FBF8E5 3.73%, #F7D8CF 42.44%, #EBD5D5 60.99%, #FBF8E5 96.27%);
+    /* background: linear-gradient(90.15deg, #FBF8E5 3.73%, #F7D8CF 42.44%, #EBD5D5 60.99%, #FBF8E5 96.27%); */
     position: relative;
     /* ← fix */
+    /* border: 1px solid; */
+    margin-left: 23px;
 }
 
-.input-wrapper input {
+.dashboard-input-wrapper input {
     width: 100%;
     height: 100%;
     border-radius: 11px;
     border: none;
     outline: none;
-    background: #fff;
+    /* background: #fff; */
     box-sizing: border-box;
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     letter-spacing: 0;
-    padding-left: 15px;
+    padding-left: 10px;
     padding-right: 60px;
     /* ← space for button */
     box-shadow: 0px 9px 36.45px 4.5px rgba(0, 0, 0, 0.06);
+    /* border: 1px solid; */
 }
 
-.arrow-btn {
+.dashboard-arrow-btn {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -245,6 +248,13 @@
     gap: 4px;
     /* border: 1px solid; */
     height: max-content;
+}
+
+.result
+{
+    color: #F4953D;
+    font-size: 14px
+;
 }
 
 .search-web-icon
@@ -432,7 +442,7 @@
     align-items: center;
 }
 
-.input-wrapper {
+.dashboard-input-wrapper {
     width: 1265px;
     height: 55px;
     border-radius: 15px;
@@ -441,7 +451,7 @@
     position: relative;
 }
 
-.input-wrapper input {
+.dashboard-input-wrapper input {
     width: 100%;
     height: 100%;
     border-radius: 11px;
@@ -459,7 +469,7 @@
     box-shadow: 0px 9px 36.45px 4.5px rgba(0, 0, 0, 0.06);
 }
 
-.arrow-btn {
+.dashboard-arrow-btn {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -544,7 +554,7 @@
         padding-right: 24px;
     }
 
-    .input-wrapper {
+    .dashboard-input-wrapper {
         width: 100%;
     }
 }
@@ -671,12 +681,12 @@
         padding: 20px 16px 0 16px;
     }
 
-    .input-wrapper {
+    .dashboard-input-wrapper {
         width: 100%;
         height: 48px;
     }
 
-    .input-wrapper input {
+    .dashboard-input-wrapper input {
         font-size: 14px;
         border-radius: 9px;
         padding-right: 48px;
@@ -705,7 +715,7 @@
         font-size: 16px;
     }
 
-    .input-wrapper input {
+    .dashboard-input-wrapper input {
         font-size: 13px;
     }
 }

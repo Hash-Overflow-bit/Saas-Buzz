@@ -224,7 +224,7 @@ form {
         align-items: center;
         width: 374px;
         height: 67.5px;
-        background-color: #FAFAFA;
+        background-color: #FAFAFA !important;
         border-radius: 18px;
         padding: 0 1rem;
         gap: 0.5rem;
