@@ -85,11 +85,11 @@ function Dashboard() {
               <div className="web-name">
                 {" "}
                 <span className="search-web-icon">
-                  <img src="public\Images\web icon.svg" alt="" />
+                  <img src="\Images\web icon.svg" alt="" />
                 </span>
                 Buzz Interactive
               </div>
-              <div className="result">Fair <span><img src="public\Images\gradient-icon.svg" alt="" /></span></div>
+              <div className="result">Fair <span><img src="\Images\gradient-icon.svg" alt="" /></span></div>
             </div>
 
             <div className="leads-report-container">
@@ -113,11 +113,11 @@ function Dashboard() {
               <div className="web-name">
                 {" "}
                 <span className="search-web-icon">
-                  <img src="public\Images\web icon.svg" alt="" />
+                  <img src="\Images\web icon.svg" alt="" />
                 </span>
                 Buzz Interactive
               </div>
-              <div className="result">Fair <span><img src="public\Images\gradient-icon.svg" alt="" /></span></div>
+              <div className="result">Fair <span><img src="\Images\gradient-icon.svg" alt="" /></span></div>
             </div>
 
             <div className="leads-report-container">
@@ -141,11 +141,11 @@ function Dashboard() {
               <div className="web-name">
                 {" "}
                 <span className="search-web-icon">
-                  <img src="public\Images\web icon.svg" alt="" />
+                  <img src="\Images\web icon.svg" alt="" />
                 </span>
                 Buzz Interactive
               </div>
-              <div className="result">Fair <span><img src="public\Images\gradient-icon.svg" alt="" /></span></div>
+              <div className="result">Fair <span><img src="\Images\gradient-icon.svg" alt="" /></span></div>
             </div>
 
             <div className="leads-report-container">
