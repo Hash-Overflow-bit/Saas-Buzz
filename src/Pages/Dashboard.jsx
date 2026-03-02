@@ -2,10 +2,15 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import BackgroundTemplate from "../components/BackgroundTemplate/BackgroundTemplate";
 import "./Dashboard.css";
+import Dropdown from "../components/Dropdowns/dropdown";
+import NavigationLinks from "../components/NavigationLinks/navigationLinks";
 import { useState } from "react";
 
 function Dashboard() {
-  const [open, setOpen] = useState(false);
+  const userOptions = [
+    { label: "Signup", onClick: () => console.log("Signup clicked") },
+    { label: "Settings", onClick: () => console.log("Settings clicked") },
+  ];
   return (
     <div className="dashboard-main-container">
 
@@ -19,6 +24,8 @@ function Dashboard() {
           </span>
           <p>Omega</p>
         </div>
+        
+        
 
         {/* user profile action */}
         <div className="dashboard-header-action">
@@ -38,17 +45,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="user-profile-dropdown">
-            <div className="dropdown-trigger" onClick={() => setOpen(!open)}>
-              ▾
-            </div>
-            {open && (
-              <div className="dropdown-options">
-                <div className="dropdown-item">Signup</div>
-                <div className="dropdown-item">Settings</div>
-              </div>
-            )}
-          </div>
+          <Dropdown options={userOptions} trigger="" className="user-profile-dropdown" />
         </div>
       </div>
 

@@ -1,0 +1,135 @@
+import React from "react";
+import "./accounts.css";
+import { useState } from "react";
+import BackgroundTemplate from "../components/BackgroundTemplate/BackgroundTemplate";
+import { Link } from "react-router-dom";
+import Dropdown from "../components/Dropdowns/dropdown";
+import NavigationLinks from "../components/NavigationLinks/navigationLinks";
+import { FaGlobeAfrica, FaChartLine, FaUsers, FaCog } from "react-icons/fa";
+import { TiUserOutline } from "react-icons/ti";
+import { FiUsers } from "react-icons/fi";
+import { BiDollar } from "react-icons/bi";
+import { IoSendOutline } from "react-icons/io5";
+
+
+
+function Accounts() {
+  const [selectedOrg, setSelectedOrg] = useState("Buzz Interactive");
+
+  const userOptions = [
+    { label: "Signup", onClick: () => console.log("Signup clicked") },
+    { label: "Settings", onClick: () => console.log("Settings clicked") },
+  ];
+
+  const orgOptions = [
+    { label: "Buzz Interactive", icon: <FaGlobeAfrica />, onClick: () => setSelectedOrg("Buzz Interactive") },
+    { label: "Dap", icon: <FaGlobeAfrica />, onClick: () => setSelectedOrg("Dap") },
+    { label: "Sample Org", icon: <FaGlobeAfrica />, onClick: () => setSelectedOrg("Sample Org") },
+  ];
+
+  const navLinks = [
+    { label: "Report", to: "/account",  },
+    { label: "Leads", to: "/leads",  },
+    { label: "Settings", to: "/settings",  },
+  ];
+
+const panelLinks=[
+  {label:"Account",icon:<TiUserOutline />},
+  {label:"Users",icon:<FiUsers />},
+  {label:"subscription",icon:<BiDollar />},
+  {label:"Embed",icon:<IoSendOutline />},
+]
+
+  return (
+    <div className="accounts-main-container">
+      {/* background template */}
+      <div className="accounts-BackgroundTemplate">
+        <BackgroundTemplate />
+      </div>
+
+      {/* header */}
+      <div className="accounts-header">
+        <div className="accounts-header-logo">
+          {" "}
+          <span>
+            {" "}
+            <img src="\Images\logo-icon.svg" alt="" />
+          </span>
+          <p>Omega</p>
+        </div>
+
+        {/* orginization type */}
+        <div className="accounts-orginization-type-container">
+          <Dropdown
+            options={orgOptions}
+            trigger={
+              <>
+                <FaGlobeAfrica style={{ marginRight: "8px" }} />
+                {selectedOrg}
+              </>
+            }
+            className="accounts-user-profile-dropdown"
+          />
+        </div>
+
+        {/* Navigation linkls */}
+
+        <div className="accounts-nav-item-container">
+          {navLinks.map((link, index) => (
+            <NavigationLinks key={index} to={link.to}>
+              {link.label}
+            </NavigationLinks>
+          ))}
+
+
+        </div>
+
+        {/* user profile action */}
+        <div className="accounts-header-action">
+          <div className="accounts-header-bell-icon">
+            <img src="\Images\bell-icon.svg" alt="bell" />
+          </div>
+          <div className="accounts-header-msg-icon">
+            <img src="\Images\msg-icon.svg" alt="" />
+          </div>
+          <div className="accounts-header-user-profile-container">
+            <div className="accounts-header-user-img">
+              <img src="\Images\user-pfp.svg" alt="" />
+            </div>
+            <div className="accounts-header-user-name">
+              <p className="accounts-user-name">Alen Walker</p>
+              <p className="accounts-user-dept">Human Resources</p>
+            </div>
+          </div>
+
+          <Dropdown
+            options={userOptions}
+            trigger=""
+            className="accounts-user-profile-dropdown"
+          />
+        </div>
+      </div>
+
+
+
+        {/* accounts from content */}
+      <div className="accounts-form-container">
+
+
+
+{/* Pandel btnsss */}
+        <div className="account-panel-container">
+          {panelLinks.map((link, index) => (
+            <div className={`panel-links ${index === 0 ? "active" : ""}`} key={index}>
+              <span className="panel-links-icon">{link.icon}</span>
+              <span className="panel-links-label">{link.label}</span>
+            </div>
+          ))}
+        </div>
+        
+      </div>
+    </div>
+  );
+}
+
+export default Accounts;
