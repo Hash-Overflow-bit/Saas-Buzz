@@ -179,20 +179,17 @@
 .dashboard-arrow-btn {
     position: absolute;
     right: 10px;
-    left: 47%;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
     display: flex;
-    align-items:flex-end;
+    align-items: center;
     justify-content: center;
     color: #333;
     padding: 6px;
     transition: background 0.2s;
-    /* border: 1px solid !important; */
-    width: 100%;
 
 
 }
@@ -419,6 +416,7 @@
 .dashboard-arrow-btn {
     position: absolute;
     right: 10px;
+    left: 90%;
     top: 50%;
     transform: translateY(-50%);
     background: none;
