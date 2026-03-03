@@ -11,6 +11,8 @@ const InputFields = ({
   disabled = false,
   onIconClick,
   id,
+  showIcon,
+  hideIcon,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -43,7 +45,7 @@ const InputFields = ({
             onClick={togglePasswordVisibility}
             style={{ cursor: "pointer" }}
           >
-            {showPassword ? <FiEyeOff /> : <FiEye />}
+            {showPassword ? hideIcon || <FiEyeOff /> : showIcon || <FiEye />}
           </div>
         ) : (
           icon && (

@@ -3,6 +3,7 @@ import { Controller, useForm } from "react-hook-form";
 import "./VerifyNumber.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import Button from "../components/Button/Button";
 
 function VerifyNumber() {
   const {
@@ -79,22 +80,15 @@ function VerifyNumber() {
         <div className="verifynumber-top-effect">
           <div className="verifynumber-top-left-img"></div>
         </div>
-
         <div className="verifynumber-left-middle-effect"></div>
-
         <div className="verifynumber-right-middle-effect"></div>
       </div>
 
       {/* VerifyNumber-form */}
-
       <div className="verifynumber-form-main-container">
         <div className="verifynumber-form-heading">Verify Your Number</div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="verifynumber-form">
-          {/* <div className="verifynumber-verification-heading">
-            <p>Enter the code we just sent you</p>
-          </div> */}
-
           <div className="verifynumber-phone-number">
             <Controller
               name="phoneNumber"
@@ -107,7 +101,6 @@ function VerifyNumber() {
                   message: "Enter a valid phone number format",
                 },
                 validate: (value) => {
-                  // Count only digits
                   const digits = value.replace(/\D/g, "");
                   return digits.length >= 6 && digits.length <= 15
                     ? true
@@ -175,9 +168,11 @@ function VerifyNumber() {
             </span>
           )}
 
-          <button type="submit" className="verifynumber-submit-btn">
-            <p>Verify</p>
-          </button>
+          <Button
+            type="submit"
+            label="Verify"
+            className="verifynumber-submit-btn"
+          />
         </form>
       </div>
     </div>

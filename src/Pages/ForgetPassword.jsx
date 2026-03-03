@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./forgetpassword.css";
-
 import { Link } from "react-router-dom";
+import InputFields from "../components/InputFields/InputFields";
+import Button from "../components/Button/Button";
 
 function ForgetPassword() {
   const {
@@ -12,14 +13,11 @@ function ForgetPassword() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
   const [isSendingResetLink, setIsSendingResetLink] = useState(true);
   const [message, setMessage] = useState("");
 
-  const HanldeForgetpassword = () => {
+  const onSubmit = (data) => {
+    console.log(data);
     setMessage(
       "If you have an account with us, a password reset link will be sent to your email.",
     );
@@ -33,9 +31,7 @@ function ForgetPassword() {
         <div className="forget-top-effect">
           <div className="forget-top-left-img"></div>
         </div>
-
         <div className="forget-left-middle-effect"></div>
-
         <div className="forget-right-middle-effect"></div>
       </div>
 
@@ -47,41 +43,27 @@ function ForgetPassword() {
           {isSendingResetLink ? (
             <>
               <div className="forget-form-group">
-                <div className="forget-input-wrapper">
-                  <input
-                    type="email"
-                    id="forget-email"
-                    placeholder="Enter your email"
-                    {...register("email", {
-                      required: "Email is required",
-                      pattern: {
-                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Invalid email address",
-                      },
-                    })}
-                  />
-                  <img
-                    src="/Images/Mail.svg"
-                    alt="Mail icon"
-                    className="forget-input-icon"
-                    width="18"
-                    height="18"
-                  />
-                </div>
-                {errors.email && (
-                  <span className="forget-error-msg">
-                    {errors.email.message}
-                  </span>
-                )}
+                <InputFields
+                  type="email"
+                  id="forget-email"
+                  placeholder="Enter your email"
+                  icon="/Images/Mail.svg"
+                  error={errors.email?.message}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Invalid email address",
+                    },
+                  })}
+                />
               </div>
 
-              <button
+              <Button
                 type="submit"
                 className="forget-submit-btn"
-                onClick={HanldeForgetpassword}
-              >
-                <p>SEND RESET LINK</p>
-              </button>
+                label="Send Reset Link"
+              />
             </>
           ) : (
             <div className="successfull-message-send">
