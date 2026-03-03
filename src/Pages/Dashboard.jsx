@@ -67,7 +67,7 @@ function Dashboard() {
           <div className="dashboard-input-wrapper">
             <input type="text" placeholder="Enter the Address of the website" />
             <button className="dashboard-arrow-btn">
-              <img src="public\Images\arrow-btn.svg" alt="" />
+              <img src="\Images\arrow-btn.svg" alt="" />
             </button>
           </div>
         </div>
