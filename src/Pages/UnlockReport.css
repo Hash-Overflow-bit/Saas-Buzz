@@ -197,6 +197,8 @@ form {
         cursor: pointer;
         display: flex;
         align-items: center;
+        width: 20px;
+
         padding: 0;
         flex-shrink: 0;
     }

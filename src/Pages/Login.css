@@ -164,6 +164,7 @@ form {
         -moz-border-radius: 18px !important;
         -ms-border-radius: 18px !important;
         -o-border-radius: 18px !important;
+        color: #000;
     }
 
 
@@ -266,6 +267,9 @@ form {
         cursor: pointer;
         display: flex;
         align-items: center;
+        /* border: 1px solid red; */
+        justify-content: flex-end;
+        width: 20px;
         padding: 0;
         flex-shrink: 0;
     }

@@ -13,7 +13,6 @@ function Dashboard() {
   ];
   return (
     <div className="dashboard-main-container">
-
       {/* Header */}
       <div className="dashboard-header">
         <div className="dashboard-header-logo">
@@ -24,8 +23,6 @@ function Dashboard() {
           </span>
           <p>Omega</p>
         </div>
-        
-        
 
         {/* user profile action */}
         <div className="dashboard-header-action">
@@ -45,18 +42,20 @@ function Dashboard() {
             </div>
           </div>
 
-          <Dropdown options={userOptions} trigger="" className="user-profile-dropdown" />
+          <Dropdown
+            options={userOptions}
+            trigger=""
+            className="user-profile-dropdown"
+          />
         </div>
       </div>
-
-     
 
       {/* Dashboard content */}
       <div className="dashboard-container">
         <div className="BackgroundTemplateOnDashboard">
           <BackgroundTemplate />
         </div>
-        
+
         {/* welcome back User */}
         <div className="greeting-user">
           <p>Hi, Gohar</p>
@@ -76,7 +75,6 @@ function Dashboard() {
         {/* Recent searches/////// recent website searches */}
 
         <div className="recent-search-container">
-
           <div className="recent-search-website-container">
             <div className="search-web-result">
               <div className="web-name">
@@ -86,7 +84,12 @@ function Dashboard() {
                 </span>
                 Buzz Interactive
               </div>
-              <div className="result">Fair <span><img src="\Images\gradient-icon.svg" alt="" /></span></div>
+              <div className="result">
+                Fair{" "}
+                <span>
+                  <img src="\Images\gradient-icon.svg" alt="" />
+                </span>
+              </div>
             </div>
 
             <div className="leads-report-container">
@@ -114,7 +117,12 @@ function Dashboard() {
                 </span>
                 Buzz Interactive
               </div>
-              <div className="result">Fair <span><img src="\Images\gradient-icon.svg" alt="" /></span></div>
+              <div className="result">
+                Fair{" "}
+                <span>
+                  <img src="\Images\gradient-icon.svg" alt="" />
+                </span>
+              </div>
             </div>
 
             <div className="leads-report-container">
@@ -142,7 +150,12 @@ function Dashboard() {
                 </span>
                 Buzz Interactive
               </div>
-              <div className="result">Fair <span><img src="\Images\gradient-icon.svg" alt="" /></span></div>
+              <div className="result">
+                Fair{" "}
+                <span>
+                  <img src="\Images\gradient-icon.svg" alt="" />
+                </span>
+              </div>
             </div>
 
             <div className="leads-report-container">
@@ -161,13 +174,6 @@ function Dashboard() {
               </div>
             </div>
           </div>
-
-
-
-
-          
-
-
         </div>
       </div>
     </div>

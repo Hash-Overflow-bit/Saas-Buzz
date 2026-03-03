@@ -269,6 +269,8 @@ form {
         cursor: pointer;
         display: flex;
         align-items: center;
+        justify-content: flex-end;
+        width: 20px;
         padding: 0;
         flex-shrink: 0;
     }
