@@ -1,12 +1,13 @@
-import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import BackgroundTemplate from "../components/BackgroundTemplate/BackgroundTemplate";
+import React, { useState } from "react";
+import { FaArrowRight, FaBars, FaTimes } from "react-icons/fa";
 import "./Dashboard.css";
 import Dropdown from "../components/Dropdowns/dropdown";
 import NavigationLinks from "../components/NavigationLinks/navigationLinks";
-import { useState } from "react";
+import { IoMdSend } from "react-icons/io";
 
 function Dashboard() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const userOptions = [
     { label: "Signup", onClick: () => console.log("Signup clicked") },
     { label: "Settings", onClick: () => console.log("Settings clicked") },
@@ -24,8 +25,18 @@ function Dashboard() {
           <p>Omega</p>
         </div>
 
+        {/* Mobile menu toggle */}
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+
         {/* user profile action */}
-        <div className="dashboard-header-action">
+        <div
+          className={`dashboard-header-action ${isMobileMenuOpen ? "open" : ""}`}
+        >
           <div className="header-bell-icon">
             <img src="\Images\bell-icon.svg" alt="bell" />
           </div>
@@ -52,10 +63,6 @@ function Dashboard() {
 
       {/* Dashboard content */}
       <div className="dashboard-container">
-        <div className="BackgroundTemplateOnDashboard">
-          <BackgroundTemplate />
-        </div>
-
         {/* welcome back User */}
         <div className="greeting-user">
           <p>Hi, Gohar</p>
@@ -67,7 +74,7 @@ function Dashboard() {
           <div className="dashboard-input-wrapper">
             <input type="text" placeholder="Enter the Address of the website" />
             <button className="dashboard-arrow-btn">
-              <img src="\Images\arrow-btn.svg" alt="" />
+              <IoMdSend />
             </button>
           </div>
         </div>

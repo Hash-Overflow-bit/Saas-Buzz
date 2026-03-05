@@ -1,103 +1,30 @@
 .unlockreport-main-container {
-    margin: 0rem;
+    margin: 0;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
-.unlockreport-top-left-img {
-    position: absolute;
-    width: 928px;
-    height: 473px;
-    top: -280.25px;
-    left: -75.75px;
-    opacity: 1;
-    z-index: 1;
-    background: radial-gradient(ellipse, #D5E8F4 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    animation: unlockMoveTopRight 6s ease-in-out infinite alternate;
-}
-
-.unlockreport-left-middle-effect {
-    width: 700px;
-    height: 700px;
-    top: 50px;
-    left: -575.75px;
-    opacity: 1;
-    position: absolute;
-    z-index: 1;
-    background: radial-gradient(circle, #FEFDF0 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    transform: rotate(-28.1deg);
-    -webkit-transform: rotate(-28.1deg);
-    -moz-transform: rotate(-28.1deg);
-    -ms-transform: rotate(-28.1deg);
-    -o-transform: rotate(-28.1deg);
-    animation: unlockMoveToTop 6s ease-in-out infinite alternate;
-}
-
-.unlockreport-right-middle-effect {
-    top: -100px !important;
-    left: 760px;
-    position: absolute;
-    z-index: 1;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #FEFDF0 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    mix-blend-mode: soft-light;
-    animation: unlockMoveBottomRight 6s ease-in-out infinite alternate;
-}
-
-@keyframes unlockMoveTopRight {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(calc(100vw - 852px), 0);
-    }
-}
-
-@keyframes unlockMoveToTop {
-    0% {
-        transform: rotate(-28.1deg) translate(0, 0);
-    }
-
-    100% {
-        transform: rotate(-28.1deg) translate(calc(100vw + 300px), -80px);
-    }
-}
-
-@keyframes unlockMoveBottomRight {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(calc(100vw - 760px - 20rem), calc(100vh - 18rem));
-    }
-}
 
 /* UnlockReport form */
 
 .unlockreport-form-main-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 512px;
+    width: min(512px, 96vw);
     height: auto;
-    padding: 1rem;
+    padding: 0;
+    margin: 0 auto;
 }
+
 
 .unlockreport-form-heading {
     color: #000000;
@@ -186,70 +113,24 @@ form {
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
-/* Tablet - Large (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .unlockreport-top-left-img {
-        width: 28rem;
-        height: 16rem;
-        top: -400px;
-        left: -300px;
-    }
-
-    .unlockreport-right-middle-effect {
-        left: calc(100vw - 200px);
-        height: 18rem;
-        opacity: 3;
-    }
-
-    .unlockreport-left-middle-effect {
-        left: -400px;
-        width: 8rem;
-    }
-}
-
 /* Tablet - Medium (max-width: 768px) */
 @media (max-width: 768px) {
-
-    .unlockreport-top-left-img {
-        width: 500px;
-        height: 280px;
-        top: -180px;
-        left: -50px;
-        opacity: 0.8;
-    }
-
-    .unlockreport-left-middle-effect {
-        width: 6rem;
-        height: 0.8rem;
-        top: 100px;
-        left: -200px;
-        opacity: 0.7;
-    }
-
-    .unlockreport-right-middle-effect {
-        top: 50px !important;
-        left: calc(100vw - 150px);
-        height: 15rem;
-        opacity: 2;
-    }
-
-    .unlockreport-form-main-container {
-        top: 50%;
-        height: auto;
-        padding: 1rem 1.5rem;
+    .unlockreport-main-container {
+        padding: 1.5rem 1rem;
+        align-items: center;
     }
 
     form {
-        width: 90vw;
-        max-width: 400px;
-        height: auto;
-        padding-bottom: 1.5rem;
+        width: 92vw;
+        max-width: 420px;
+        margin: 1.5rem auto 0 auto;
     }
 
     .unlockreport-form-heading {
-        font-size: 30px;
-        width: auto;
+        font-size: clamp(24px, 5vw, 30px);
+        width: 100%;
         text-align: center;
+        margin-top: 1rem;
     }
 
     .unlockreport-submit-btn {
@@ -260,47 +141,15 @@ form {
 
 /* Mobile - Large (max-width: 480px) */
 @media (max-width: 480px) {
-
-    .unlockreport-top-left-img {
-        width: 380px;
-        height: 220px;
-        top: -140px;
-        left: -40px;
-        opacity: 0.7;
-    }
-
-    .unlockreport-left-middle-effect {
-        width: 5rem;
-        height: 0.6rem;
-        top: 150px;
-        left: -120px;
-        opacity: 0.5;
-    }
-
-    .unlockreport-right-middle-effect {
-        top: 100px !important;
-        right: -100px;
-        left: auto;
-        height: 12rem;
-        opacity: 1.5;
-    }
-
     .unlockreport-form-main-container {
         width: 100%;
         padding: 0.5rem;
     }
 
     form {
-        width: 95vw;
-        max-width: 100%;
-        border-radius: 30px;
+        width: 96vw;
+        border-radius: 28px;
         padding-bottom: 1.5rem;
-    }
-
-    .unlockreport-error-msg {
-        width: 100%;
-        max-width: 300px;
-        padding-left: 0.5rem;
     }
 
     .unlockreport-submit-btn {
@@ -315,40 +164,12 @@ form {
 
 /* Mobile - Small (max-width: 375px) */
 @media (max-width: 375px) {
-
-    .unlockreport-top-left-img {
-        width: 320px;
-        height: 180px;
-        top: -110px;
-        left: -35px;
-        opacity: 0.6;
-    }
-
-    .unlockreport-left-middle-effect {
-        width: 4rem;
-        height: 0.5rem;
-        top: 180px;
-        left: -80px;
-        opacity: 0.4;
-    }
-
-    .unlockreport-right-middle-effect {
-        top: 120px !important;
-        right: -80px;
-        height: 10rem;
-        opacity: 1.2;
-    }
-
     .unlockreport-form-heading {
         font-size: 24px;
     }
 
-    .unlockreport-submit-btn,
-    .unlockreport-dont-have-account-container {
-        max-width: 280px;
-    }
-
     .unlockreport-submit-btn {
+        max-width: 280px;
         padding: 18px 60px;
         font-size: 15px;
     }
@@ -356,32 +177,8 @@ form {
 
 /* Mobile - Extra Small (max-width: 320px) */
 @media (max-width: 320px) {
-
-    .unlockreport-top-left-img {
-        width: 280px;
-        height: 160px;
-        top: -90px;
-        left: -30px;
-        opacity: 0.5;
-    }
-
-    .unlockreport-left-middle-effect {
-        width: 3rem;
-        height: 0.4rem;
-        top: 200px;
-        left: -60px;
-        opacity: 0.3;
-    }
-
-    .unlockreport-right-middle-effect {
-        top: 150px !important;
-        right: -60px;
-        height: 8rem;
-        opacity: 1;
-    }
-
     form {
-        border-radius: 25px;
+        border-radius: 22px;
     }
 
     .unlockreport-form-heading {
@@ -391,11 +188,6 @@ form {
     .unlockreport-submit-btn {
         max-width: 260px;
     }
-
-
-    .unlockreport-submit-btn {
-        height: 50px;
-        padding: 15px 50px;
-        font-size: 14px;
-    }
 }
+
+

@@ -1,7 +1,6 @@
 import React from "react";
 import "./accounts.css";
 import { useState } from "react";
-import BackgroundTemplate from "../components/BackgroundTemplate/BackgroundTemplate";
 import { Link } from "react-router-dom";
 import Dropdown from "../components/Dropdowns/dropdown";
 import NavigationLinks from "../components/NavigationLinks/navigationLinks";
@@ -152,11 +151,6 @@ function Accounts() {
 
   return (
     <div className="accounts-main-container">
-      {/* background template */}
-      <div className="accounts-BackgroundTemplate">
-        <BackgroundTemplate />
-      </div>
-
       {/* header */}
       <div className="accounts-header">
         <div className="accounts-header-logo">
@@ -236,7 +230,6 @@ function Accounts() {
         {/* accounts formInput container */}
 
         <div className="accounts-formInput-container">
-
           {/* Account Information */}
           <div className="accounts-divider-container">
             <h1>Account Information</h1>

@@ -26,15 +26,6 @@ function ForgetPassword() {
 
   return (
     <div className="forget-main-container">
-      {/* effect images-container */}
-      <div className="forget-effects-img-main-container">
-        <div className="forget-top-effect">
-          <div className="forget-top-left-img"></div>
-        </div>
-        <div className="forget-left-middle-effect"></div>
-        <div className="forget-right-middle-effect"></div>
-      </div>
-
       {/* Forget Password Form */}
       <div className="forget-form-main-container">
         <div className="forget-form-heading">Forgot Password?</div>

@@ -53,15 +53,6 @@ function Signup() {
 
   return (
     <div className="signup-main-container">
-      {/* effect images-container */}
-      <div className="signup-effects-img-main-container">
-        <div className="signup-top-effect">
-          <div className="signup-top-left-img"></div>
-        </div>
-        <div className="signup-left-middle-effect"></div>
-        <div className="signup-right-middle-effect"></div>
-      </div>
-
       {/* Signup-form */}
       <div className="signup-form-main-container">
         <div className="signup-form-heading">Get Started in Seconds</div>

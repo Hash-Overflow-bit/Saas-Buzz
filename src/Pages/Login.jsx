@@ -53,15 +53,6 @@ function Login() {
 
   return (
     <div className="login-main-container">
-      {/* effect images-container */}
-      <div className="effects-img-main-container">
-        <div className="top-effect">
-          <div className="top-left-img"></div>
-        </div>
-        <div className="left-middle-effect"></div>
-        <div className="right-middle-effect"></div>
-      </div>
-
       {/* Login-form */}
       <div className="form-main-container">
         <div className="form-heading">Welcome back</div>

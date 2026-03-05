@@ -1,124 +1,52 @@
 .verifynumber-main-container {
-    margin: 0rem;
+    margin: 0;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
-.verifynumber-top-left-img {
-    position: absolute;
-    width: 928px;
-    height: 473px;
-    top: -280.25px;
-    left: -75.75px;
-    opacity: 1;
-    z-index: 1;
-    background: radial-gradient(ellipse, #D5E8F4 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    animation: verifyMoveTopRight 6s ease-in-out infinite alternate;
-}
-
-.verifynumber-left-middle-effect {
-    width: 700px;
-    height: 700px;
-    top: 50px;
-    left: -575.75px;
-    opacity: 1;
-    position: absolute;
-    z-index: 1;
-    background: radial-gradient(circle, #FEFDF0 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    transform: rotate(-28.1deg);
-    -webkit-transform: rotate(-28.1deg);
-    -moz-transform: rotate(-28.1deg);
-    -ms-transform: rotate(-28.1deg);
-    -o-transform: rotate(-28.1deg);
-    animation: verifyMoveToTop 6s ease-in-out infinite alternate;
-}
-
-.verifynumber-right-middle-effect {
-    top: -100px !important;
-    left: 760px;
-    position: absolute;
-    z-index: 1;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #FEFDF0 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    mix-blend-mode: soft-light;
-    animation: verifyMoveBottomRight 6s ease-in-out infinite alternate;
-}
-
-@keyframes verifyMoveTopRight {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(calc(100vw - 852px), 0);
-    }
-}
-
-@keyframes verifyMoveToTop {
-    0% {
-        transform: rotate(-28.1deg) translate(0, 0);
-    }
-
-    100% {
-        transform: rotate(-28.1deg) translate(calc(100vw + 300px), -80px);
-    }
-}
-
-@keyframes verifyMoveBottomRight {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(calc(100vw - 760px - 20rem), calc(100vh - 18rem));
-    }
-}
 
 /* VerifyNumber form */
 
 .verifynumber-form-main-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 512px;
+    width: min(512px, 96vw);
     height: auto;
-    padding: 1rem;
+    padding: 0;
+    margin: 0 auto;
 }
+
 
 .verifynumber-form-heading {
     color: #000000;
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 36px;
-    line-height: 22.5px;
+    font-size: clamp(22px, 5vw, 36px);
+    line-height: 1.3;
     letter-spacing: 0;
-    width: 364px;
-    height: 25px;
+    width: auto;
+    height: auto;
     opacity: 1;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 form {
-    margin-top: 3rem;
-    width: 417px;
+    margin-top: 2rem;
+    width: min(417px, 92vw);
     height: auto;
     border-radius: 40px;
     padding-bottom: 2rem;
@@ -144,13 +72,13 @@ form {
         font-weight: 500;
         color: #333;
         margin-bottom: 0.4rem;
-        width: 374px;
+        width: min(374px, 85%);
     }
 
     .verifynumber-input-wrapper {
         display: flex;
         align-items: center;
-        width: 374px;
+        width: min(374px, 85%);
         height: 67.5px;
         background-color: #FAFAFA;
         border-radius: 18px;
@@ -161,13 +89,12 @@ form {
     .verifynumber-input-wrapper input {
         flex: 1;
         border: none;
-
         outline: none;
         background: transparent;
         font-family: 'Hanken Grotesk', sans-serif;
         font-weight: 400;
         font-style: normal;
-        font-size: 18px;
+        font-size: clamp(15px, 3.5vw, 18px);
         line-height: 22.5px;
         letter-spacing: 0;
         color: #000000;
@@ -202,13 +129,12 @@ form {
         flex-shrink: 0;
     }
 
-
     .verifynumber-error-msg {
         display: block;
         font-size: 0.75rem;
         color: #ff4d4d;
         margin-top: 0.3rem;
-        width: 374px;
+        width: min(374px, 85%);
         padding-left: 0.5rem;
         text-align: left;
         font-family: 'Hanken Grotesk', sans-serif;
@@ -219,14 +145,26 @@ form {
     .otp-container {
         display: flex;
         justify-content: center;
-        gap: 15px;
+        align-items: center;
+        gap: clamp(6px, 2vw, 15px);
         margin: 2rem auto 1.5rem auto;
-        width: 374px;
+        width: min(374px, 85%);
+        flex-wrap: nowrap;
     }
 
     .otp-input {
         outline: none;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        /* Responsive sizing */
+        width: clamp(44px, 13vw, 65px) !important;
+        height: clamp(46px, 13vw, 67px) !important;
+        border-radius: clamp(12px, 3vw, 18px) !important;
+        font-size: clamp(24px, 6vw, 48px) !important;
+        background: #FAFAFA;
+        text-align: center;
+        font-family: 'Hanken Grotesk', sans-serif;
+        font-weight: 400;
+        flex-shrink: 1;
     }
 
     .otp-input:focus {
@@ -237,18 +175,17 @@ form {
     .otp-error-msg {
         display: block;
         text-align: center;
-        width: 374px;
+        width: min(374px, 85%);
         margin: 0.5rem auto 0 auto;
+        font-size: clamp(12px, 3vw, 14px);
+        color: #ff4d4d;
+        font-family: 'Hanken Grotesk', sans-serif;
     }
-
-
-
-
 
     /* Submit button */
     .verifynumber-submit-btn {
-        width: 374px;
-        height: 67px;
+        width: min(374px, 85%);
+        height: clamp(50px, 8vw, 67px);
         border-radius: 17.25px;
         padding: 0;
         gap: 7.5px;
@@ -259,7 +196,7 @@ form {
         font-family: 'Hanken Grotesk', sans-serif;
         font-weight: 400;
         font-style: normal;
-        font-size: 20px;
+        font-size: clamp(15px, 3.5vw, 20px);
         line-height: 22.5px;
         letter-spacing: 0;
         text-transform: uppercase;
@@ -274,7 +211,7 @@ form {
     .verifynumber-submit-btn p {
         width: 100%;
         margin: 0;
-        padding: 27px 0;
+        padding: 0;
         text-align: center;
     }
 
@@ -290,7 +227,7 @@ form {
 
     .verifynumber-verification-heading p {
         font-family: 'Hanken Grotesk', sans-serif;
-        font-size: 16px;
+        font-size: clamp(14px, 3vw, 16px);
         font-weight: 400;
         color: #666;
         margin: 0;
@@ -298,7 +235,7 @@ form {
 
     .verifynumber-verification-left {
         text-align: left;
-        max-width: 374px;
+        max-width: min(374px, 85%);
         width: 100%;
         margin: 1rem auto 1.5rem auto;
     }
@@ -312,7 +249,7 @@ form {
     }
 
     .verifynumber-phone-container {
-        width: 374px;
+        width: min(374px, 85%);
     }
 
     .verifynumber-phone-rtl {
@@ -329,11 +266,9 @@ form {
         padding: 25px 60px 25px 21px !important;
         font-family: 'Hanken Grotesk', sans-serif !important;
         font-weight: 400 !important;
-        font-size: 18px !important;
+        font-size: clamp(15px, 3.5vw, 18px) !important;
         color: #333 !important;
         text-align: left !important;
-
-
     }
 
     .verifynumber-phone-button {
@@ -374,8 +309,9 @@ form {
     .verifynumber-phone-container .flag-dropdown:focus {
         background-color: transparent !important;
     }
+}
 
-    .verifynumber-phone-dropdown {
+.verifynumber-phone-dropdown {
     width: 100px !important;
     border: none !important;
     background-color: #FFFFFF !important;
@@ -410,317 +346,53 @@ form {
 .verifynumber-phone-dropdown .country .dial-code {
     color: inherit !important;
 }
-}
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
-/* Tablet - Large (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .verifynumber-top-left-img {
-        width: 28rem;
-        height: 16rem;
-        top: -400px;
-        left: -300px;
-    }
-
-    .verifynumber-right-middle-effect {
-        left: calc(100vw - 200px);
-        height: 18rem;
-        opacity: 3;
-    }
-
-    .verifynumber-left-middle-effect {
-        left: -400px;
-        width: 8rem;
-    }
-}
-
 /* Tablet - Medium (max-width: 768px) */
 @media (max-width: 768px) {
-
-    .verifynumber-top-left-img {
-        width: 500px;
-        height: 280px;
-        top: -180px;
-        left: -50px;
-        opacity: 0.8;
-    }
-
-    .verifynumber-left-middle-effect {
-        width: 6rem;
-        height: 0.8rem;
-        top: 100px;
-        left: -200px;
-        opacity: 0.7;
-    }
-
-    .verifynumber-right-middle-effect {
-        top: 50px !important;
-        left: calc(100vw - 150px);
-        height: 15rem;
-        opacity: 2;
-    }
-
-    .verifynumber-form-main-container {
-        top: 50%;
-        height: auto;
-        padding: 1rem 1.5rem;
+    .verifynumber-main-container {
+        padding: 1.5rem 1rem;
+        align-items: center;
     }
 
     form {
-        width: 90vw;
-        max-width: 400px;
-        height: auto;
-        padding-bottom: 1.5rem;
+        width: 92vw;
+        max-width: 420px;
+        margin: 1.5rem auto 0 auto;
     }
 
     .verifynumber-form-heading {
-        font-size: 30px;
-        width: auto;
+        font-size: clamp(22px, 5vw, 30px);
+        width: 100%;
         text-align: center;
-    }
-
-    .verifynumber-input-wrapper,
-    .verifynumber-submit-btn {
-        width: 90%;
-        max-width: 340px;
-    }
-
-    .verifynumber-phone-container {
-        width: 90%;
-        max-width: 340px;
-    }
-
-    .verifynumber-verification-left {
-        max-width: 340px;
+        margin-top: 1rem;
     }
 }
 
 /* Mobile - Large (max-width: 480px) */
 @media (max-width: 480px) {
-
-    .verifynumber-top-left-img {
-        width: 380px;
-        height: 220px;
-        top: -140px;
-        left: -40px;
-        opacity: 0.7;
-    }
-
-    .verifynumber-left-middle-effect {
-        width: 5rem;
-        height: 0.6rem;
-        top: 150px;
-        left: -120px;
-        opacity: 0.5;
-    }
-
-    .verifynumber-right-middle-effect {
-        top: 100px !important;
-        right: -100px;
-        left: auto;
-        height: 12rem;
-        opacity: 1.5;
-    }
-
-    .verifynumber-form-main-container {
-        width: 100%;
-        padding: 1rem 1.5rem;
+    .verifynumber-main-container {
+        padding: 1rem 0.5rem;
     }
 
     form {
-        width: 95vw;
-        max-width: 100%;
-        border-radius: 30px;
+        width: 96vw;
+        border-radius: 28px;
         padding-bottom: 1.5rem;
-    }
-
-    .verifynumber-form-heading {
-        font-size: 26px;
-        line-height: 30px;
-        margin-bottom: 0.5rem;
-    }
-
-    .verifynumber-form-group {
-        margin-bottom: 0.6rem;
-    }
-
-    .verifynumber-form-group label {
-        font-size: 0.8rem;
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .verifynumber-input-wrapper {
-        width: 100%;
-        max-width: 300px;
-        height: 48px;
-        padding: 0 0.8rem;
-    }
-
-    .verifynumber-input-wrapper input {
-        font-size: 0.85rem;
-    }
-
-    .verifynumber-error-msg {
-        width: 100%;
-        max-width: 300px;
-        padding-left: 0.5rem;
-    }
-
-    .verifynumber-submit-btn {
-        width: 100%;
-        max-width: 300px;
-        height: 54px;
-        font-size: 16px;
-        padding: 20px 80px;
-        margin: 1rem auto 0 auto;
-    }
-
-    .verifynumber-phone-container {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .verifynumber-phone-input {
-        height: 48px !important;
-        font-size: 0.85rem !important;
-        padding: 20px 60px 20px 21px !important;
-    }
-
-    .verifynumber-phone-button {
-        height: 48px !important;
-    }
-
-    .verifynumber-verification-left {
-        max-width: 300px;
     }
 }
 
 /* Mobile - Medium (max-width: 375px) */
 @media (max-width: 375px) {
-
-    .verifynumber-top-left-img {
-        width: 320px;
-        height: 180px;
-        top: -110px;
-        left: -35px;
-        opacity: 0.6;
-    }
-
-    .verifynumber-left-middle-effect {
-        width: 4rem;
-        height: 0.5rem;
-        top: 180px;
-        left: -80px;
-        opacity: 0.4;
-    }
-
-    .verifynumber-right-middle-effect {
-        top: 120px !important;
-        right: -80px;
-        height: 10rem;
-        opacity: 1.2;
-    }
-
-    .verifynumber-form-heading {
-        font-size: 24px;
-    }
-
-    .verifynumber-input-wrapper,
-    .verifynumber-submit-btn,
-    .verifynumber-form-group label,
-    .verifynumber-error-msg {
-        max-width: 280px;
-    }
-
-    .verifynumber-submit-btn {
-        padding: 18px 60px;
-        font-size: 15px;
-    }
-
-    .verifynumber-phone-container {
-        max-width: 280px;
-    }
-
-    .verifynumber-verification-left {
-        max-width: 280px;
+    form {
+        width: 98vw;
     }
 }
 
 /* Mobile - Small (max-width: 320px) */
 @media (max-width: 320px) {
-
-    .verifynumber-top-left-img {
-        width: 280px;
-        height: 160px;
-        top: -90px;
-        left: -30px;
-        opacity: 0.5;
-    }
-
-    .verifynumber-left-middle-effect {
-        width: 3rem;
-        height: 0.4rem;
-        top: 200px;
-        left: -60px;
-        opacity: 0.3;
-    }
-
-    .verifynumber-right-middle-effect {
-        top: 150px !important;
-        right: -60px;
-        height: 8rem;
-        opacity: 1;
-    }
-
     form {
-        border-radius: 25px;
-    }
-
-    .verifynumber-form-heading {
-        font-size: 22px;
-    }
-
-    .verifynumber-input-wrapper,
-    .verifynumber-submit-btn,
-    .verifynumber-form-group label,
-    .verifynumber-error-msg {
-        max-width: 260px;
-    }
-
-    .verifynumber-input-wrapper {
-        height: 45px;
-    }
-
-    .verifynumber-input-wrapper input {
-        font-size: 0.8rem;
-    }
-
-    .verifynumber-submit-btn {
-        height: 50px;
-        padding: 15px 50px;
-        font-size: 14px;
-    }
-
-    .verifynumber-phone-container {
-        max-width: 260px;
-    }
-
-    .verifynumber-phone-input {
-        height: 45px !important;
-        font-size: 0.8rem !important;
-        padding: 18px 55px 18px 18px !important;
-    }
-
-    .verifynumber-phone-button {
-        height: 45px !important;
-    }
-
-    .verifynumber-verification-left {
-        max-width: 260px;
+        border-radius: 22px;
     }
 }
-
-
-

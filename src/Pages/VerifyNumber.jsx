@@ -75,15 +75,6 @@ function VerifyNumber() {
 
   return (
     <div className="verifynumber-main-container">
-      {/* effect images-container */}
-      <div className="verifynumber-effects-img-main-container">
-        <div className="verifynumber-top-effect">
-          <div className="verifynumber-top-left-img"></div>
-        </div>
-        <div className="verifynumber-left-middle-effect"></div>
-        <div className="verifynumber-right-middle-effect"></div>
-      </div>
-
       {/* VerifyNumber-form */}
       <div className="verifynumber-form-main-container">
         <div className="verifynumber-form-heading">Verify Your Number</div>
@@ -145,19 +136,7 @@ function VerifyNumber() {
                 onKeyDown={(e) => handleKeyDown(index, e)}
                 className="otp-input"
                 style={{
-                  width: "65.25px",
-                  height: "67.5px",
-                  borderRadius: "18.75px",
-                  background: "#FAFAFA",
-                  opacity: 1,
                   border: otpError ? "2px solid #ff4d4d" : "1px solid #E0E0E0",
-                  textAlign: "center",
-                  fontFamily: "'Hanken Grotesk', sans-serif",
-                  fontWeight: "400",
-                  fontStyle: "normal",
-                  fontSize: "48px",
-                  lineHeight: "22.5px",
-                  letterSpacing: "0%",
                 }}
               />
             ))}

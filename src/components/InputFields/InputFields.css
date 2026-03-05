@@ -8,10 +8,9 @@
 
 .input-label {
     display: block;
-    width: 100%;
-    max-width: 374px;
+    width: min(374px, 85%);
     font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 0.85rem;
+    font-size: clamp(12px, 3.5vw, 14px);
     font-weight: 500;
     color: #333;
     margin-bottom: 0.4rem;
@@ -21,9 +20,8 @@
 .input-wrapper {
     display: flex;
     align-items: center;
-    width: 100%;
-    max-width: 374px;
-    height: 67.5px;
+    width: min(374px, 85%);
+    height: clamp(50px, 8vw, 67.5px);
     background-color: #FAFAFA !important;
     border-radius: 18px;
     padding: 0 1rem;
@@ -41,7 +39,7 @@
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: clamp(14px, 3.5vw, 18px);
     line-height: 22.5px;
     letter-spacing: 0;
     color: #333;
@@ -90,11 +88,10 @@
 
 .input-error {
     display: block;
-    font-size: 0.75rem;
+    font-size: clamp(11px, 3vw, 12px);
     color: #ff4d4d;
     margin-top: 0.3rem;
-    width: 100%;
-    max-width: 374px;
+    width: min(374px, 85%);
     padding-left: 0.5rem;
     text-align: left;
     font-family: 'Hanken Grotesk', sans-serif;
@@ -104,55 +101,8 @@
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
-@media (max-width: 768px) {
-    .input-wrapper,
-    .input-label,
-    .input-error {
-        width: 90%;
-        max-width: 340px;
-    }
-}
-
 @media (max-width: 480px) {
-    .input-wrapper,
-    .input-label,
-    .input-error {
-        width: 100%;
-        max-width: 300px;
-        height: 48px;
+    .input-wrapper {
         padding: 0 0.8rem;
-    }
-
-    .input-field {
-        font-size: 0.85rem;
-    }
-
-    .input-wrapper {
-        height: 48px;
-    }
-}
-
-@media (max-width: 375px) {
-    .input-wrapper,
-    .input-label,
-    .input-error {
-        max-width: 280px;
-    }
-}
-
-@media (max-width: 320px) {
-    .input-wrapper,
-    .input-label,
-    .input-error {
-        max-width: 260px;
-        height: 45px;
-    }
-
-    .input-field {
-        font-size: 0.8rem;
-    }
-
-    .input-wrapper {
-        height: 45px;
     }
 }

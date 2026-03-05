@@ -69,15 +69,6 @@ function UnlockReport() {
 
   return (
     <div className="unlockreport-main-container">
-      {/* effect images-container */}
-      <div className="unlockreport-effects-img-main-container">
-        <div className="unlockreport-top-effect">
-          <div className="unlockreport-top-left-img"></div>
-        </div>
-        <div className="unlockreport-left-middle-effect"></div>
-        <div className="unlockreport-right-middle-effect"></div>
-      </div>
-
       {/* UnlockReport-form */}
       <div className="unlockreport-form-main-container">
         <div className="unlockreport-form-heading">Unlock You Free Report</div>
