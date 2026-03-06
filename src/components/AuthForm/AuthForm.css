@@ -9,6 +9,7 @@
         0 10px 25px -5px rgba(0, 0, 0, 0.05),
         0 20px 40px -10px rgba(0, 0, 0, 0.1);
     margin: 2rem auto;
+    /* border: 1px solid; */
 }
 
 /* Tablet - Medium (max-width: 768px) */

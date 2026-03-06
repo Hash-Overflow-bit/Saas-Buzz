@@ -23,6 +23,12 @@
     height: auto;
     padding: 0;
     margin: 0 auto;
+    /* border: 1px solid; */
+}
+
+.form-main-container form{
+    
+    width: 100%;
 }
 
 
@@ -168,6 +174,16 @@
 
 /* Mobile - Large (max-width: 480px) */
 @media (max-width: 480px) {
+    .login-main-container {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .auth-form {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 28px;
+        padding-bottom: 1.5rem;
+    }
 
     .submit-btn {
         width: min(379px, 89%);
