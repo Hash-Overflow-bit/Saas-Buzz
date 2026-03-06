@@ -27,10 +27,7 @@
 
 }
 
-.signup-form-main-container form
-{
-    width:100%;
-}
+
 
 
 
@@ -197,6 +194,12 @@
     .signup-main-container {
         padding: 1.5rem 1.25rem;
     }
+
+    .signup-form-main-container form
+{
+    width:100%;
+}
+
 
     .auth-form {
         width: 100%;

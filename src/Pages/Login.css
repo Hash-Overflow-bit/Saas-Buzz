@@ -26,10 +26,7 @@
     /* border: 1px solid; */
 }
 
-.form-main-container form{
-    
-    width: 100%;
-}
+
 
 
 
@@ -170,6 +167,11 @@
         text-align: center;
         margin-top: 1rem;
     }
+
+    .form-main-container form{
+    
+    width: 100%;
+}
 }
 
 /* Mobile - Large (max-width: 480px) */
