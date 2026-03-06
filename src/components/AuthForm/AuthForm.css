@@ -1,0 +1,32 @@
+.auth-form {
+    width: 75%;
+    height: auto;
+    border-radius: 40px;
+    padding-bottom: 2rem;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    margin: 2rem auto;
+}
+
+/* Tablet - Medium (max-width: 768px) */
+@media (max-width: 768px) {
+    .auth-form {
+        margin: 1.5rem auto 0 auto;
+    }
+}
+
+/* Mobile - Large (max-width: 500px) */
+@media (max-width: 500px) {
+    .auth-form {
+        border-radius: 28px;
+        padding-bottom: 1.5rem;
+    }
+}
+
+/* Mobile - Extra Small (max-width: 320px) */
+@media (max-width: 500px) {
+    .auth-form {
+        border-radius: 22px;
+        width: 100%;
+    }
+}

@@ -2,8 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import AuthForm from "../components/AuthForm/AuthForm";
 import InputFields from "../components/InputFields/InputFields";
 import Button from "../components/Button/Button";
+import AuthButton from "../components/AuthButton/AuthButton";
 
 function Login() {
   const {
@@ -57,24 +59,8 @@ function Login() {
       <div className="form-main-container">
         <div className="form-heading">Welcome back</div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="login-form">
-          <div className="google-auth-containe">
-            <button type="button" className="auth">
-              <img
-                src="/Images/google.svg"
-                alt="Google Logo"
-                width={20.25}
-                height={20.25}
-              />
-              <span>Login With Google</span>
-            </button>
-
-            {/* divider */}
-            <div className="divider">
-              <span>or</span>
-            </div>
-            {/* inputs */}
-          </div>
+        <AuthForm onSubmit={handleSubmit(onSubmit)} className="login-form">
+          <AuthButton label="Login With Google" />
 
           <div className="form-group">
             <InputFields
@@ -119,7 +105,7 @@ function Login() {
           </div>
 
           <Button type="submit" label="Login" className="submit-btn" />
-        </form>
+        </AuthForm>
 
         <div className="dont-have-account-container">
           <p>

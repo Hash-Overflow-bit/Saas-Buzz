@@ -144,9 +144,8 @@ form {
     /* OTP Input Styles */
     .otp-container {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        gap: clamp(6px, 2vw, 15px);
         margin: 2rem auto 1.5rem auto;
         width: min(374px, 85%);
         flex-wrap: nowrap;
@@ -372,6 +371,12 @@ form {
 
 /* Mobile - Large (max-width: 480px) */
 @media (max-width: 480px) {
+    .verifynumber-submit-btn,
+    .verifynumber-input-wrapper,
+    .otp-container {
+        width: min(379px, 89%);
+    }
+
     .verifynumber-main-container {
         padding: 1rem 0.5rem;
     }

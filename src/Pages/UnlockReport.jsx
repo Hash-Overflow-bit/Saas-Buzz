@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./UnlockReport.css";
+import AuthForm from "../components/AuthForm/AuthForm";
 import InputFields from "../components/InputFields/InputFields";
 import Button from "../components/Button/Button";
 
@@ -73,7 +74,10 @@ function UnlockReport() {
       <div className="unlockreport-form-main-container">
         <div className="unlockreport-form-heading">Unlock You Free Report</div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="unlockreport-form">
+        <AuthForm
+          onSubmit={handleSubmit(onSubmit)}
+          className="unlockreport-form"
+        >
           <div className="unlockreport-form-group">
             <InputFields
               type="text"
@@ -131,7 +135,7 @@ function UnlockReport() {
             label="Unlock Report"
             className="unlockreport-submit-btn"
           />
-        </form>
+        </AuthForm>
       </div>
     </div>
   );
