@@ -4,6 +4,8 @@ import "./VerifyNumber.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Button from "../components/Button/Button";
+import AuthForm from "../components/AuthForm/AuthForm";
+import Effect from "../components/BackgraoudTemplaeEffect/Effect";
 
 function VerifyNumber() {
   const {
@@ -75,11 +77,15 @@ function VerifyNumber() {
 
   return (
     <div className="verifynumber-main-container">
+      <Effect />
       {/* VerifyNumber-form */}
       <div className="verifynumber-form-main-container">
         <div className="verifynumber-form-heading">Verify Your Number</div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="verifynumber-form">
+        <AuthForm
+          onSubmit={handleSubmit(onSubmit)}
+          className="verifynumber-form"
+        >
           <div className="verifynumber-phone-number">
             <Controller
               name="phoneNumber"
@@ -152,7 +158,7 @@ function VerifyNumber() {
             label="Verify"
             className="verifynumber-submit-btn"
           />
-        </form>
+        </AuthForm>
       </div>
     </div>
   );

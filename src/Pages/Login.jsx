@@ -6,6 +6,7 @@ import AuthForm from "../components/AuthForm/AuthForm";
 import InputFields from "../components/InputFields/InputFields";
 import Button from "../components/Button/Button";
 import AuthButton from "../components/AuthButton/AuthButton";
+import Effect from "../components/BackgraoudTemplaeEffect/Effect";
 
 function Login() {
   const {
@@ -55,6 +56,7 @@ function Login() {
 
   return (
     <div className="login-main-container">
+      <Effect />
       {/* Login-form */}
       <div className="form-main-container">
         <div className="form-heading">Welcome back</div>

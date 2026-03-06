@@ -3,8 +3,11 @@
     height: auto;
     border-radius: 40px;
     padding-bottom: 2rem;
-    background-color: #FFFFFF;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 
+        0 10px 25px -5px rgba(0, 0, 0, 0.05),
+        0 20px 40px -10px rgba(0, 0, 0, 0.1);
     margin: 2rem auto;
 }
 

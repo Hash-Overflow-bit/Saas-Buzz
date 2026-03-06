@@ -6,6 +6,7 @@ import AuthForm from "../components/AuthForm/AuthForm";
 import InputFields from "../components/InputFields/InputFields";
 import Button from "../components/Button/Button";
 import AuthButton from "../components/AuthButton/AuthButton";
+import Effect from "../components/BackgraoudTemplaeEffect/Effect";
 
 function Signup() {
   const {
@@ -55,6 +56,7 @@ function Signup() {
 
   return (
     <div className="signup-main-container">
+      <Effect />
       {/* Signup-form */}
       <div className="signup-form-main-container">
         <div className="signup-form-heading">Get Started in Seconds</div>

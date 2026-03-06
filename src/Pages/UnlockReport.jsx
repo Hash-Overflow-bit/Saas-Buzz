@@ -4,6 +4,7 @@ import "./UnlockReport.css";
 import AuthForm from "../components/AuthForm/AuthForm";
 import InputFields from "../components/InputFields/InputFields";
 import Button from "../components/Button/Button";
+import Effect from "../components/BackgraoudTemplaeEffect/Effect";
 
 function UnlockReport() {
   const {
@@ -70,6 +71,7 @@ function UnlockReport() {
 
   return (
     <div className="unlockreport-main-container">
+      <Effect />
       {/* UnlockReport-form */}
       <div className="unlockreport-form-main-container">
         <div className="unlockreport-form-heading">Unlock You Free Report</div>

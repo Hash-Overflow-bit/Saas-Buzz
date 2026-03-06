@@ -1,0 +1,54 @@
+.mesh-gradient-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FCFCFC;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.mesh-glow {
+    position: absolute;
+    filter: blur(100px);
+    border-radius: 50%;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Primary Light Source: Soft Blue */
+.mesh-glow-1 {
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, #E0F2FE 0%, rgba(224, 242, 254, 0) 70%);
+    top: -10%;
+    left: -10%;
+}
+
+/* Secondary Glow: Warm Peach/Orange */
+.mesh-glow-2 {
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(circle, #FFF7ED 0%, rgba(255, 247, 237, 0) 70%);
+    top: -5%;
+    right: -5%;
+}
+
+/* Optional Third Accent: Soft Purple/Pink */
+.mesh-glow-3 {
+    width: 45vw;
+    height: 45vh;
+    background: radial-gradient(circle, #FFF7ED   0%, rgba(243, 232, 255, 0) 70%);
+    bottom: -10%;
+    left: -10%;
+    opacity: 0.4;
+    /* border: 1px solid; */
+}
+
+@media (max-width: 768px) {
+    .mesh-glow {
+        filter: blur(60px);
+        opacity: 0.8;
+    }
+}

@@ -28,6 +28,7 @@
 
 
 
+
 .unlockreport-form-heading {
     color: #000000;
     font-family: 'Hanken Grotesk', sans-serif;
@@ -113,6 +114,11 @@
         padding: 1.5rem 1rem;
         align-items: center;
     }
+    .unlockreport-form-main-container form
+{
+    width: 100%;
+}
+
 
     .unlockreport-form-heading {
         font-size: clamp(24px, 5vw, 30px);
@@ -127,6 +133,12 @@
     .unlockreport-form-main-container {
         width: 100%;
         padding: 0.5rem;
+    }
+
+    .auth-form {
+        width: 96vw;
+        border-radius: 28px;
+        padding-bottom: 1.5rem;
     }
 
     .unlockreport-submit-btn {

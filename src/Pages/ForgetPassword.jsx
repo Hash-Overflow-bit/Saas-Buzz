@@ -5,6 +5,8 @@ import "./forgetpassword.css";
 import { Link } from "react-router-dom";
 import InputFields from "../components/InputFields/InputFields";
 import Button from "../components/Button/Button";
+import AuthForm from "../components/AuthForm/AuthForm";
+import Effect from "../components/BackgraoudTemplaeEffect/Effect";
 
 function ForgetPassword() {
   const {
@@ -26,11 +28,12 @@ function ForgetPassword() {
 
   return (
     <div className="forget-main-container">
+      <Effect />
       {/* Forget Password Form */}
       <div className="forget-form-main-container">
         <div className="forget-form-heading">Forgot Password?</div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="forget-form">
+        <AuthForm onSubmit={handleSubmit(onSubmit)} className="forget-form">
           {isSendingResetLink ? (
             <>
               <div className="forget-form-group">
@@ -85,7 +88,7 @@ function ForgetPassword() {
               <p className="forget-success-text">{message}</p>
             </div>
           )}
-        </form>
+        </AuthForm>
 
         <div className="Rememberpassword">
           <p>
