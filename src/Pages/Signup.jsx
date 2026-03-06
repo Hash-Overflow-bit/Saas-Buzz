@@ -104,7 +104,7 @@ function Signup() {
           <p>
             By creating account you agree to our{" "}
             <span className="signup-policy-link">Terms</span> &{" "}
-            <span className="signup-policy-link">Privacy Policy</span>
+            <span className="signup-policy-link">Privacy</span>
           </p>
         </div>
 

@@ -84,6 +84,7 @@ form {
         border-radius: 18px;
         padding: 0 1rem;
         gap: 0.5rem;
+        box-shadow: 0 4px 10px #F6F6F6;
     }
 
     .verifynumber-input-wrapper input {
@@ -164,6 +165,7 @@ form {
         font-family: 'Hanken Grotesk', sans-serif;
         font-weight: 400;
         flex-shrink: 1;
+        box-shadow: 0 4px 10px #F6F6F6;
     }
 
     .otp-input:focus {

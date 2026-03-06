@@ -99,8 +99,7 @@
 /* Policy container */
 
 .signup-policy-container {
-    width: auto;
-    max-width: min(450px, 96vw);
+    width: 75%;
     height: auto;
     opacity: 1;
     display: flex;
@@ -120,7 +119,6 @@
     color: #B2B0B3;
     margin: 0;
     text-align: center;
-    white-space: nowrap;
 }
 
 .signup-policy-container p a {
