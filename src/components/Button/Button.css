@@ -28,41 +28,6 @@ button
   border: none;
   cursor: pointer;
 }
-.SaveFromDeatils {
-    grid-column: 3;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    /* border: 1px solid; */
-    align-items: center;
-    padding-right: 25px;
-}
 
 
 
-.deleteAccountBtn
-
-{
-  width: 150px;
-  height: 58px;
-  top: 1137.82px;
-  left: 100px;
-  border-radius: 11.25px;
-  padding: 22.5px;
-  gap: 7.5px;
-  rotate: 0deg;
-  opacity: 1;
-  background-color: #BF443D;
-  color: white;
-  font-family: 'Hanken Grotesk', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  border: none;
-  margin-left: 65px;
-  margin-top: 15px;
-  /* margin-bottom: 55px !important; */
-
-}

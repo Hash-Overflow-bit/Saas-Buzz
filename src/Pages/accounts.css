@@ -1,237 +1,479 @@
 .accounts-main-container {
     position: relative;
-    /* important - makes it the reference point */
-    height: 100vh;
-    overflow: hidden;
-}
-
-.accounts-BackgroundTemplate {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: visible;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
 }
 
 .accounts-header {
-    position: relative;
-
-     background: linear-gradient(
-    90.11deg,
-    #FAF7E6 2.84%,
-    #EAD5D5 32.07%,
-    #F6D6CE 55.07%,
-    #F8F5D6 78.07%,
-    #FFFDF6 102.51%
-  );
-    height: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(
+        90.11deg,
+        #FAF7E6 2.84%,
+        #EAD5D5 32.07%,
+        #F6D6CE 55.07%,
+        #F8F5D6 78.07%,
+        #FFFDF6 102.51%
+    );
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 36px;
-    padding-right: 36px;
-    
+    padding: 0 5%;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .accounts-header-logo {
-
     display: flex;
-    height: 32px;
-    width: 115px;
-    justify-content: space-evenly;
     align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .accounts-header-logo p {
     font-family: 'Lexend', sans-serif;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 140%;
-    letter-spacing: 0%;
+    font-size: 20px;
     color: #6D4AF7;
+    margin: 0;
+}
+
+.accounts-orginization-type-container {
+    flex-shrink: 0;
+    /* border: 1px solid; */
+  
 }
 
 .accounts-nav-item-container {
     display: flex;
-    gap: 15px; /* balanced spacing for links */
+    gap: 20px;
     align-items: center;
+    margin: 0 auto;
 }
 
 .accounts-header-action {
-
     display: flex;
     align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
 
-    width: 293px;
-    height: 41px;
+.accounts-header-bell-icon, .accounts-header-msg-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .accounts-header-user-profile-container {
-    width: 178px;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 12px;
 }
 
+.accounts-header-user-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eee;
+}
+
+.accounts-header-user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.accounts-header-user-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.accounts-user-name {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    color: #000;
+}
 
 .accounts-user-dept {
-    color: #B2B0B3;
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.accounts-user-profile-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.accounts-form-container {
-    border-top-left-radius: 22.5px;
-    border-top-right-radius: 22.5px;
-    height: calc(100vh - 13%);
-    position: absolute;
-    top: 13%;
-    width: 100%;
-    background-color: #FFFFFF;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /* display: flex; */
+    font-size: 11px;
+    color: #B2B0B3;
+    margin: 0;
     /* border: 1px solid; */
 }
 
-
-
-
-/* panel links */
-
-.account-panel-container {
+.accounts-form-container {
+    border-radius: 30px 30px 0 0;
+    margin-top: -20px;
+    position: relative;
+    z-index: 10;
+    background-color: #FFFFFF;
     width: 100%;
-    height: max-content;
-    /* border-right: 1px solid #000000; */
-    padding: 2rem 1.5rem;
+    padding-bottom: 50px;
+}
+
+/* Panel links */
+.account-panel-container {
+    width: 90%;
+    margin: 50px auto;
     display: flex;
-    /* flex-direction: column; */
+    flex-wrap: wrap;
     gap: 10px;
-    box-sizing: border-box;
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    /* flex-direction: column; */
-    gap: 1rem;
+    padding: 0;
+    /* margin: 20px; */
+    /* border: 1px solid; */
 }
 
 .panel-links {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
+    gap: 8px;
+    padding: 10px 18px;
+    background-color: #FAFAFA;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: black;
+    transition: all 0.3s ease;
     font-family: 'Hanken Grotesk', sans-serif;
-    width: 115px;
-    display: flex;
-    justify-content: center;
-   
-
-
-  /* Optional: simulate the border width */
-  padding: 5px;
-  font-size: 15px !important;
-
-  /* Inner content background */
-  box-sizing: border-box;
-  background-clip: padding-box;
-
-  background-color:#FAFAFA;
-  border-radius: 12px;
-
+    font-size: 15px;
 }
 
 .panel-links:hover {
-    background-color: #f8f8f8;
-    color: #000;
+    background-color: #efefef;
+    transform: translateY(-2px);
 }
 
 .panel-links.active {
-     
     background-color: #F5F0DA;
-;
+    font-weight: 500;
 }
 
 .panel-links:last-child {
-    margin-left: auto; /* This pushes the last item (Embed) to the extreme right */
+    margin-left: auto;
 }
 
-.panel-links-icon {
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.panel-links-label {
-    font-weight: 400;
-    font-size: 15px;
-}
-
-
-
-
-/* accounts formInput container */
-
-
-.accounts-formInput-container
-{
-    border: 1px solid;
-    width: 95%;
+/* Form Sections */
+.accounts-formInput-container {
+    width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-
 }
 
 .accounts-divider-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 30px;
     /* border: 1px solid; */
-    margin: 2rem 1.5rem 1rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .accounts-divider-container h1 {
     font-family: 'Hanken Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
+    font-weight: 600;
+    font-size: clamp(20px, 4vw, 24px);
     color: #000;
-    margin: 0;
-    margin-left: 40px;
-    margin-top: 10px;
-    /* leading-trim: cap-height; - Note: standard CSS uses text-edge or simple line-height control */
+    margin: 0 0 10px 0;
 }
 
 .accounts-divider-container hr {
     border: none;
-    border-top: 2px solid #EEEEEE;
-    width: 100%;
-    margin: 0;
+    border-top: 1.5px solid #EEEEEE;
+    width: 97%;
 }
 
 .input-container {
-    margin: 2rem 1.5rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center; /* keep each input centered within its grid cell */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+}
+/* ===== Save Changes Button Containers ===== */
+
+/* Both button containers mimic .inputfield-main-container centering */
+.saveChanges-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers button same way inputfield-main-container centers input-wrapper */
+    /* border: 1px solid; */
+    width: 100%;
+    margin-top: 10px;
+      display: flex;
+    /* justify-content: flex-end; */
+    align-items: flex-end !important;
+}
+
+/* Button matches input-wrapper width exactly */
+.SaveCHanges-btn {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    font-family: 'Hanken Grotesk', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px;
+    padding: 14px 0 !important;
+    border-radius: 10px !important;
+    border: none !important;
+    cursor: pointer;
+    width: min(374px, 85%) !important; /* exact same as .input-wrapper */
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    text-align: center;
+    width: 40% !important;
+    margin-right: 68px;
+  
+}
+
+.changePassword
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start !important;
+    /* margin-right: 50px; */
+}
+
+.SaveCHanges-btn:hover {
+    background: #222222 !important;
+    transform: translateY(-1px);
+}
+
+/* 1st Save → 3rd column */
+.saveChanges-btn-container.SaveFromDeatils {
+    grid-column: 3;
+}
+
+/* 2nd Save → 1st column */
+.saveChanges-btn-container.changePassword {
+    grid-column: 1;
+}
+
+/* ===== Delete Account ===== */
+.deleteAccountBtn-container {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.deleteAccountBtn {
+    background-color: transparent !important;
+    background-color: #FF4D4D !important;
+  
+    font-family: 'Hanken Grotesk', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    padding: 10px 24px !important;
+    border-radius: 10px !important;
+    cursor: pointer;
+    /* width: 100% !important; */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    margin-left: 30px;
+}
+
+.deleteAccountBtn:hover {
+    background-color: #FFF0F0 !important;
+}
+
+/* ===== Hamburger Button (hidden on desktop) ===== */
+.accounts-hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    color: #333;
+    transition: all 0.25s ease;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid; */
+    width: 100%;
+    margin-left: auto;
+}
+
+/* RESPONSIVENESS */
+
+@media (max-width: 1200px) {
+    .accounts-header {
+        padding: 0 3%;
+    }
+    
+    .input-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .saveChanges-btn-container.SaveFromDeatils {
+        grid-column: 2;
+    }
+}
+
+@media (max-width: 992px) {
+    .accounts-header {
+        padding: 15px 5%;
+        height: auto;
+    }
+
+    .accounts-nav-item-container {
+        order: 4;
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        padding-top: 10px;
+    }
+
+    .accounts-header-logo {
+        flex: 1;
+    }
+
+    .accounts-orginization-type-container {
+        order: 2;
+    }
+
+    .accounts-header-action {
+        order: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-panel-container {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .account-panel-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .panel-links {
+        flex-shrink: 0;
+    }
+
+    .panel-links:last-child {
+        margin-left: 0;
+    }
+
+    .input-container {
+        grid-template-columns: 1fr;
+    }
+
+    .accounts-header-user-name {
+        display: none;
+    }
+
+    /* Hamburger menu */
+    .accounts-hamburger-btn {
+        display: flex;
+        order: 3;
+        max-width: 100%;
+        justify-content: flex-end;
+    }
+
+    .accounts-header-action {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 5%;
+        background: #FFFFFF;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 16px;
+        flex-direction: column;
+        gap: 14px;
+        z-index: 200;
+        min-width: 220px;
+        animation: slideDown 0.25s ease;
+    }
+
+    .accounts-header-action.mobile-open {
+        display: flex;
+    }
+
+    .accounts-header-action.mobile-open .accounts-header-user-name {
+        display: flex;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .saveChanges-btn-container.SaveFromDeatils,
+    .saveChanges-btn-container.changePassword {
+        grid-column: 1;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+
+    .SaveCHanges-btn {
+        width: min(374px, 85%) !important;
+        margin: 0 auto !important;
+    }
+
+    .deleteAccountBtn-container {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+
+    .deleteAccountBtn {
+        width: min(374px, 85%) !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .accounts-header {
+        gap: 10px;
+    }
+
+    .accounts-header-logo p {
+        display: none;
+    }
+
+    .accounts-nav-item-container {
+        gap: 10px;
+    }
+
+    .accounts-divider-container h1 {
+        text-align: center;
+    }
+    .accounts-formInput-container .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0; /* Gap is handled by input components margin */
+    }
+
+    .deleteAccountBtn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .deleteAccountBtn {
+        width: min(374px, 85%) !important;
+        margin: 0 auto;
+    }
 }

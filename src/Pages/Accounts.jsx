@@ -12,11 +12,15 @@ import { IoSendOutline } from "react-icons/io5";
 import { HiGlobeAmericas } from "react-icons/hi2";
 import { CgOrganisation } from "react-icons/cg";
 import { MdOutlinePhoneEnabled, MdLinkOff } from "react-icons/md";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import InputFields from "../components/InputFields/InputFields";
 import Button from "../components/Button/Button";
 
+import Effect from "../components/BackgraoudTemplaeEffect/Effect";
+
 function Accounts() {
   const [selectedOrg, setSelectedOrg] = useState("Buzz Interactive");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const userOptions = [
     { label: "Signup", onClick: () => console.log("Signup clicked") },
@@ -50,7 +54,7 @@ function Accounts() {
   const panelLinks = [
     { label: "Account", icon: <TiUserOutline /> },
     { label: "Users", icon: <FiUsers /> },
-    { label: "subscription", icon: <BiDollar /> },
+    { label: "Subscriptions", icon: <BiDollar /> },
     { label: "Embed", icon: <IoSendOutline /> },
   ];
 
@@ -186,8 +190,18 @@ function Accounts() {
           ))}
         </div>
 
+        {/* Hamburger button - visible only on responsive */}
+        <button
+          className="accounts-hamburger-btn"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <HiOutlineMenuAlt3 />
+        </button>
+
         {/* user profile action */}
-        <div className="accounts-header-action">
+        <div
+          className={`accounts-header-action ${mobileMenuOpen ? "mobile-open" : ""}`}
+        >
           <div className="accounts-header-bell-icon">
             <img src="\Images\bell-icon.svg" alt="bell" />
           </div>
@@ -254,12 +268,12 @@ function Accounts() {
           <div className="accounts-divider-container">
             <h1>Change Password</h1>
             <hr />
+          </div>
 
-            <div className="input-container">
-              {resetPasswordConfig.map((input, index) => (
-                <InputFields key={index} {...input} />
-              ))}
-            </div>
+          <div className="input-container">
+            {resetPasswordConfig.map((input, index) => (
+              <InputFields key={index} {...input} />
+            ))}
 
             <div className="saveChanges-btn-container changePassword">
               <Button
@@ -272,12 +286,12 @@ function Accounts() {
 
           {/* Delete account */}
 
-          <div className="deleteAccountBtn-container">
-            <div className="accounts-divider-container">
-              <h1>Delete Account</h1>
-              <hr />
-            </div>
+          <div className="accounts-divider-container">
+            <h1>Delete Account</h1>
+            <hr />
+          </div>
 
+          <div className="deleteAccountBtn-container">
             <Button
               label=" Delete Account"
               className="deleteAccountBtn"
