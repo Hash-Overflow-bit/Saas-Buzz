@@ -111,185 +111,6 @@
     /* border: 1px solid; */
 }
 
-.accounts-form-container {
-    border-radius: 30px 30px 0 0;
-    margin-top: 40px;
-    position: relative;
-    z-index: 10;
-    background-color: #FFFFFF;
-    width: 100%;
-    padding-bottom: 50px;
-    /* border: 10px solid black; */
-    
-}
-
-/* Panel links */
-.account-panel-container {
-    width: 95%;
-    margin: 50px auto;
-    /* margin-top: 90px; */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0;
-    /* margin: 20px; */
-    /* border: 1px solid; */
-    /* height: 160px; */
-}
-
-.panel-links {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    background-color: #FAFAFA;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 15px;
-}
-
-.panel-links:hover {
-    background-color: #efefef;
-    transform: translateY(-2px);
-}
-
-.panel-links.active {
-    background-color: #F5F0DA;
-    font-weight: 500;
-}
-
-.panel-links:last-child {
-    margin-left: auto;
-}
-
-/* Form Sections */
-.accounts-formInput-container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px;
-    /* border: 1px solid; */
-}
-
-.accounts-divider-container {
-    /* margin-top: 40px; */
-    margin-bottom: 20px;
-    margin-left: 30px;
-    /* border: 1px solid; */
-}
-
-.accounts-divider-container h1 {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: clamp(20px, 4vw, 24px);
-    color: #000;
-    margin: 0 0 10px 0;
-}
-
-.accounts-divider-container hr {
-    border: none;
-    border-top: 1.5px solid #EEEEEE;
-    width: 97%;
-}
-
-.input-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-/* ===== Save Changes Button Containers ===== */
-
-/* Both button containers mimic .inputfield-main-container centering */
-.saveChanges-btn-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centers button same way inputfield-main-container centers input-wrapper */
-    /* border: 1px solid; */
-    width: 100%;
-    margin-top: 10px;
-      display: flex;
-    /* justify-content: flex-end; */
-    align-items: flex-end !important;
-}
-
-/* Button matches input-wrapper width exactly */
-.SaveCHanges-btn {
-    background: #000000 !important;
-    color: #FFFFFF !important;
-    font-family: 'Hanken Grotesk', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    letter-spacing: 0.5px;
-    padding: 14px 0 !important;
-    border-radius: 10px !important;
-    border: none !important;
-    cursor: pointer;
-    width: min(374px, 85%) !important; /* exact same as .input-wrapper */
-    transition: all 0.25s ease;
-    text-transform: uppercase;
-    text-align: center;
-    width: 40% !important;
-    margin-right: 68px;
-  
-}
-
-.changePassword
-{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start !important;
-    /* margin-right: 50px; */
-}
-
-.SaveCHanges-btn:hover {
-    background: #222222 !important;
-    transform: translateY(-1px);
-}
-
-/* 1st Save → 3rd column */
-.saveChanges-btn-container.SaveFromDeatils {
-    grid-column: 3;
-}
-
-/* 2nd Save → 1st column */
-.saveChanges-btn-container.changePassword {
-    grid-column: 1;
-}
-
-/* ===== Delete Account ===== */
-.deleteAccountBtn-container {
-    margin-top: 20px;
-    width: 100%;
-}
-
-.deleteAccountBtn {
-    background-color: transparent !important;
-    background-color: #FF4D4D !important;
-  
-    font-family: 'Hanken Grotesk', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    padding: 10px 24px !important;
-    border-radius: 10px !important;
-    cursor: pointer;
-    /* width: 100% !important; */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.25s ease;
-    margin-left: 30px;
-}
-
-.deleteAccountBtn:hover {
-    background-color: #FFF0F0 !important;
-}
-
 /* ===== Hamburger Button (hidden on desktop) ===== */
 .accounts-hamburger-btn {
     display: none;
@@ -309,19 +130,11 @@
 
 }
 
-/* RESPONSIVENESS */
+/* ===== RESPONSIVENESS ===== */
 
 @media (max-width: 1200px) {
     .accounts-header {
         padding: 0 3%;
-    }
-    
-    .input-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .saveChanges-btn-container.SaveFromDeatils {
-        grid-column: 2;
     }
 }
 
@@ -353,32 +166,6 @@
 }
 
 @media (max-width: 768px) {
-    .account-panel-container {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 10px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        /* border: 1px solid; */
-        /* padding-top: 50px; */
-    }
-    
-    .account-panel-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .panel-links {
-        flex-shrink: 0;
-    }
-
-    .panel-links:last-child {
-        margin-left: 0;
-    }
-
-    .input-container {
-        grid-template-columns: 1fr;
-    }
-
     .accounts-header-user-name {
         display: none;
     }
@@ -394,7 +181,8 @@
     .accounts-header-action {
         display: none;
         position: absolute;
-        top: 100%;
+        /* border: 1px solid; */
+        top: 50%;
         right: 5%;
         background: #FFFFFF;
         border-radius: 16px;
@@ -425,32 +213,6 @@
             transform: translateY(0);
         }
     }
-
-    .saveChanges-btn-container.SaveFromDeatils,
-    .saveChanges-btn-container.changePassword {
-        grid-column: 1;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100%;
-    }
-
-    .SaveCHanges-btn {
-        width: min(374px, 85%) !important;
-        margin: 0 auto !important;
-    }
-
-    .deleteAccountBtn-container {
-        display: flex !important;
-        justify-content: center !important;
-        width: 100%;
-    }
-
-    .deleteAccountBtn {
-        width: min(374px, 85%) !important;
-        margin: 0 auto !important;
-    }
 }
 
 @media (max-width: 480px) {
@@ -464,29 +226,5 @@
 
     .accounts-nav-item-container {
         gap: 10px;
-    }
-
-    .accounts-divider-container h1 {
-        text-align: center;
-    }
-    .accounts-formInput-container .input-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 0; /* Gap is handled by input components margin */
-    }
-
-    .deleteAccountBtn-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-top: 40px;
-    }
-
-    .deleteAccountBtn {
-        width: min(374px, 85%) !important;
-        margin: 0 auto;
     }
 }

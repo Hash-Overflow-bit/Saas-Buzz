@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaArrowRight, FaBars, FaTimes } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import "./Dashboard.css";
 import Dropdown from "../components/Dropdowns/dropdown";
 import NavigationLinks from "../components/NavigationLinks/navigationLinks";
@@ -25,17 +26,17 @@ function Dashboard() {
           <p>Omega</p>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Hamburger button - visible only on responsive */}
         <button
-          className="mobile-menu-toggle"
+          className="dashboard-hamburger-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          <HiOutlineMenuAlt3 />
         </button>
 
         {/* user profile action */}
         <div
-          className={`dashboard-header-action ${isMobileMenuOpen ? "open" : ""}`}
+          className={`dashboard-header-action ${isMobileMenuOpen ? "mobile-open" : ""}`}
         >
           <div className="header-bell-icon">
             <img src="\Images\bell-icon.svg" alt="bell" />

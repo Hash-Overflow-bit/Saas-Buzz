@@ -25,7 +25,7 @@
     padding-bottom: 45px;
     padding-left: 36px;
     padding-right: 36px;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .dashboard-header-logo {
@@ -55,13 +55,22 @@
     align-items: center;
 }
 
-.mobile-menu-toggle {
+/* ===== Hamburger Button (hidden on desktop) ===== */
+.dashboard-hamburger-btn {
     display: none;
-    background: transparent;
+    background: none;
     border: none;
+    font-size: 24px;
     cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
     color: #333;
-    padding: 0.5rem;
+    transition: all 0.25s ease;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin-left: auto;
+    /* border: 1px solid; */
 }
 
 .dashboard-header-action {
@@ -69,7 +78,7 @@
     display: flex;
     align-items: center;
      display: flex;
-     justify-content:space-around;
+     justify-content:flex-end;
      align-items: flex-end;
 
     width: 400px !important;
@@ -128,7 +137,7 @@
     font-size: 24px;
     line-height: 21px;
     letter-spacing: 0;
-    padding-left: 50px;
+    padding-left: 22px;
     padding-top: 25px;
 
 }
@@ -137,16 +146,6 @@
 
 /* dashboard input */
 
-.dashboard-input {
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
 .dashboard-input-wrapper {
     width: 100%;
     max-width: 1265px;
@@ -154,7 +153,7 @@
     border-radius: 15px;
     padding: 4.5px;
     background: linear-gradient(90.15deg, #FBF8E5 3.73%, #F7D8CF 42.44%, #EBD5D5 60.99%, #FBF8E5 96.27%);
-    position: relative;
+    position: relative; /* ✅ already here — keeps absolute children anchored */
 }
 
 .dashboard-input-wrapper input {
@@ -176,26 +175,28 @@
 }
 
 .dashboard-arrow-btn {
-    position: absolute;
-    right: -1050px;        /* accounts for wrapper's 4.5px padding + breathing room */
-    top: 50%;
+    position: absolute;       /* ✅ changed from fixed → absolute */
+    left: 1200px;              /* ✅ offset from wrapper's right edge */
+    top: 50%;                 /* ✅ center vertically */
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     color: #333;
     padding: 6px;
-    width: auto;        /* removed the 90% width that was misaligning it */
-    flex-shrink: 0;
-    transition: background 0.2s;
+    transition: color 0.2s;
+    /* border: 1px solid; */
+     /* z-index: -1000; */
+    width: max-content;
 }
 
 .dashboard-arrow-btn:hover {
     color: #000;
 }
+
 
 /* Recent search */
 .recent-search-container {
@@ -206,6 +207,8 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
+
+    /* border: 1px solid; */
     
 }
 
@@ -311,6 +314,12 @@
     .dashboard-input-wrapper {
         width: 100%;
     }
+
+    /* Enables responsiveness for all smaller screens while leaving desktop untouched */
+    .dashboard-arrow-btn {
+        left: auto !important;
+        right: 10px !important;
+    }
 }
 
 /* Tablet landscape: 1024px */
@@ -386,6 +395,7 @@
         height: auto;
         min-height: 100vh;
         overflow-y: auto;
+        /* border: 1px solid; */
     }
 
     .dashboard-header {
@@ -398,44 +408,45 @@
         gap: 6px;
     }
 
-    .mobile-menu-toggle {
+    .dashboard-hamburger-btn {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         z-index: 101;
+        /* border: 1px solid; */
     }
 
     .dashboard-header-action {
         display: none;
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
-        height: max-content;
-        background-color: #fff;
-        padding: 1.2rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        flex-direction: row;
-        flex-wrap: wrap;
+        left: 45%;
+        /* border: 1px solid !important; */
+        width: 50% !important;
+        background: #FFFFFF;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 16px;
+        flex-direction: column;
+        gap: 14px;
+        z-index: 200;
+        animation: slideDown 0.25s ease;
+    }
+
+    .dashboard-header-action.mobile-open {
+        display: flex;
         justify-content: center;
         align-items: center;
-        gap: 0.5rem;
-        z-index: 100;
-        border-radius: 0 0 15px 15px;
     }
 
-    .dashboard-header-action.open {
-        display: flex;
-    }
-
-    .dashboard-header-action.open .header-user-name {
+    .dashboard-header-action.mobile-open .header-user-name {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    .dashboard-header-action.open .header-bell-icon,
-    .dashboard-header-action.open .header-msg-icon {
+    .dashboard-header-action.mobile-open .header-bell-icon,
+    .dashboard-header-action.mobile-open .header-msg-icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -453,13 +464,15 @@
         top: 0;
         height: auto;
         min-height: 100vh;
-        margin-top: -16px;
+        /* margin-top: -16px; */
+        
     }
 
     .greeting-user {
-        padding-left: 16px;
-        padding-top: 20px;
-        font-size: 18px;
+        padding-left: 1px;
+        /* padding-top: 20px; */
+        font-size: 25px !important;
+        /* border: 1px solid; */
     }
 
     .dashboard-input {
@@ -479,8 +492,11 @@
     }
 
     .dashboard-arrow-btn {
-        right: -170px;
+        position: absolute;
+        left: auto !important; /* Disables the hardcoded left: 1200px from desktop */
+        right: 8px !important; /* Anchors it cleanly to the inner right side of the input */
         padding: 4px;
+        border: none;
     }
 
 
