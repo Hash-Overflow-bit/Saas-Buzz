@@ -3,6 +3,7 @@
     min-height: 100vh;
     overflow-x: hidden;
     background-color: #FFFFFF;
+    
 }
 
 .accounts-header {
@@ -112,18 +113,19 @@
 
 .accounts-form-container {
     border-radius: 30px 30px 0 0;
-    margin-top: -20px;
+    margin-top: 40px;
     position: relative;
     z-index: 10;
     background-color: #FFFFFF;
     width: 100%;
     padding-bottom: 50px;
+    /* border: 10px solid black; */
     
 }
 
 /* Panel links */
 .account-panel-container {
-    width: 85%;
+    width: 95%;
     margin: 50px auto;
     /* margin-top: 90px; */
     display: flex;
@@ -168,6 +170,10 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    /* border: 1px solid; */
 }
 
 .accounts-divider-container {
@@ -354,7 +360,7 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         /* border: 1px solid; */
-        padding-top: 50px;
+        /* padding-top: 50px; */
     }
     
     .account-panel-container::-webkit-scrollbar {

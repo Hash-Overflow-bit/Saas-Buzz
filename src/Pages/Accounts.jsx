@@ -228,22 +228,23 @@ function Accounts() {
 
       {/* accounts from content */}
       <div className="accounts-form-container">
-        {/* Pandel btnsss */}
-        <div className="account-panel-container">
-          {panelLinks.map((link, index) => (
-            <div
-              className={`panel-links ${index === 0 ? "active" : ""}`}
-              key={index}
-            >
-              <span className="panel-links-icon">{link.icon}</span>
-              <span className="panel-links-label">{link.label}</span>
-            </div>
-          ))}
-        </div>
+        <Effect />
 
         {/* accounts formInput container */}
 
         <div className="accounts-formInput-container">
+          {/* Pandel btnsss */}
+          <div className="account-panel-container">
+            {panelLinks.map((link, index) => (
+              <div
+                className={`panel-links ${index === 0 ? "active" : ""}`}
+                key={index}
+              >
+                <span className="panel-links-icon">{link.icon}</span>
+                <span className="panel-links-label">{link.label}</span>
+              </div>
+            ))}
+          </div>
           {/* Account Information */}
           <div className="accounts-divider-container">
             <h1>Account Information</h1>
