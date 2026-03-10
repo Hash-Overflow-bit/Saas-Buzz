@@ -122,14 +122,16 @@
 
 /* Panel links */
 .account-panel-container {
-    width: 90%;
+    width: 85%;
     margin: 50px auto;
+    /* margin-top: 90px; */
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 0;
     /* margin: 20px; */
     /* border: 1px solid; */
+    /* height: 160px; */
 }
 
 .panel-links {
@@ -348,6 +350,8 @@
         padding-bottom: 10px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        /* border: 1px solid; */
+        padding-top: 50px;
     }
     
     .account-panel-container::-webkit-scrollbar {
