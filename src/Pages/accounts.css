@@ -118,6 +118,7 @@
     background-color: #FFFFFF;
     width: 100%;
     padding-bottom: 50px;
+    
 }
 
 /* Panel links */
@@ -170,7 +171,7 @@
 }
 
 .accounts-divider-container {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-bottom: 20px;
     margin-left: 30px;
     /* border: 1px solid; */
@@ -195,6 +196,7 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
     margin-top: 10px;
+    margin-bottom: 50px;
 }
 /* ===== Save Changes Button Containers ===== */
 
@@ -296,8 +298,9 @@
     align-items: center;
     justify-content: center;
     /* border: 1px solid; */
-    width: 100%;
+    width: max-content;
     margin-left: auto;
+
 }
 
 /* RESPONSIVENESS */
@@ -450,7 +453,7 @@
     }
 
     .accounts-header-logo p {
-        display: none;
+        /* display: none; */
     }
 
     .accounts-nav-item-container {
