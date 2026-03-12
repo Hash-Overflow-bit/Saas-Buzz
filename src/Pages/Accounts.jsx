@@ -1,16 +1,41 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./accounts.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "../components/Dropdowns/dropdown";
 import NavigationLinks from "../components/NavigationLinks/navigationLinks";
 import { FaGlobeAfrica } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import AccountForm from "../components/AccountForm/AccountForm";
+import UserForm from "../components/UserForm/UserForm";
+import EmbedForm from "../components/EmbedForm/EmbedForm";
+import SubscriptionForm from "../components/SubscriptionForm/SubscriptionForm";
 
 function Accounts() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [selectedOrg, setSelectedOrg] = useState("Buzz Interactive");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("account");
+
+  // Sync activeTab with URL
+  useEffect(() => {
+    const pathParts = location.pathname.split("/").filter(Boolean);
+    const lastPart = pathParts[pathParts.length - 1];
+    
+    if (pathParts.length === 1 && pathParts[0] === "account") {
+      setActiveTab("account");
+    } else if (["users", "subscriptions", "embed"].includes(lastPart)) {
+      setActiveTab(lastPart);
+    }
+  }, [location.pathname]);
+
+  const handleTabChange = (tabId) => {
+    if (tabId === "account") {
+      navigate("/account");
+    } else {
+      navigate(`/account/${tabId}`);
+    }
+  };
 
   const userOptions = [
     { label: "Signup", onClick: () => console.log("Signup clicked") },
@@ -113,8 +138,19 @@ function Accounts() {
         </div>
       </div>
 
-      {/* Account Form Component */}
-      <AccountForm />
+      {/* Conditional Form Rendering */}
+      {activeTab === "account" ? (
+        <AccountForm activeTab={activeTab} onTabChange={handleTabChange} />
+      ) : activeTab === "users" ? (
+        <UserForm activeTab={activeTab} onTabChange={handleTabChange} />
+      ) : activeTab === "subscriptions" ? (
+        <SubscriptionForm activeTab={activeTab} onTabChange={handleTabChange} />
+      ) : activeTab === "embed" ? (
+        <EmbedForm activeTab={activeTab} onTabChange={handleTabChange} />
+      ) : (
+        /* Fallback to show navigation even on other tabs for consistency */
+        <AccountForm activeTab={activeTab} onTabChange={handleTabChange} />
+      )}
     </div>
   );
 }

@@ -11,12 +11,12 @@ import InputFields from "../InputFields/InputFields";
 import Button from "../Button/Button";
 import Effect from "../BackgraoudTemplaeEffect/Effect";
 
-function AccountForm() {
+function AccountForm({ activeTab, onTabChange }) {
   const panelLinks = [
-    { label: "Account", icon: <TiUserOutline /> },
-    { label: "Users", icon: <FiUsers /> },
-    { label: "Subscriptions", icon: <BiDollar /> },
-    { label: "Embed", icon: <IoSendOutline /> },
+    { id: "account", label: "Account", icon: <TiUserOutline /> },
+    { id: "users", label: "Users", icon: <FiUsers /> },
+    { id: "subscriptions", label: "Subscriptions", icon: <BiDollar /> },
+    { id: "embed", label: "Embed", icon: <IoSendOutline /> },
   ];
 
   const InputConfig = [
@@ -121,10 +121,11 @@ function AccountForm() {
       <div className="accounts-formInput-container">
         {/* Panel btns */}
         <div className="account-panel-container">
-          {panelLinks.map((link, index) => (
+          {panelLinks.map((link) => (
             <div
-              className={`panel-links ${index === 0 ? "active" : ""}`}
-              key={index}
+              className={`panel-links ${activeTab === link.id ? "active" : ""}`}
+              key={link.id}
+              onClick={() => onTabChange(link.id)}
             >
               <span className="panel-links-icon">{link.icon}</span>
               <span className="panel-links-label">{link.label}</span>

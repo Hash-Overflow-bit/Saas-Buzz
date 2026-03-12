@@ -1,0 +1,153 @@
+/* Sub Panel Links */
+.embed-subpanel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 40px;
+}
+
+.subpanel-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 14px;
+    color: #444444;
+}
+
+.subpanel-link:hover {
+    background-color: #F0F0F0;
+}
+
+.subpanel-link.active {
+    background-color: #FEF3C7; /* Soft yellow for active subtab */
+    color: #000000;
+    font-weight: 500;
+}
+
+.subpanel-icon {
+    font-size: 16px;
+}
+
+/* Content Header */
+.embed-content-header {
+    margin: 0 40px 20px 40px;
+}
+
+.embed-content-header h1 {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+/* Content Body */
+.embed-content-body {
+    margin: 0 40px;
+}
+
+.embed-instruction {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+/* Code Snippet */
+.code-snippet-container {
+    position: relative;
+    background-color: #1E293B; /* Dark slate */
+    border-radius: 12px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-snippet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #334155; /* Slightly lighter gray for header */
+    padding: 8px 16px;
+    border-radius: 12px 12px 0 0;
+}
+
+.code-lang-label {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    color: #94A3B8;
+    text-transform: lowercase;
+}
+
+.code-snippet-pre {
+    margin: 0;
+    padding: 24px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #E2E8F0;
+}
+
+.copy-snippet-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+}
+
+.copy-snippet-btn:hover {
+    color: #F8FAFC;
+}
+
+.copy-snippet-btn span {
+    font-weight: 400;
+}
+
+/* Syntax Highlighting Mockup */
+.code-tag { color: #94A3B8; }
+.code-func { color: #FBBF24; }
+.code-str { color: #34D399; }
+.code-bool { color: #60A5FA; }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .embed-subpanel-container {
+        margin: 20px;
+        gap: 10px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .embed-subpanel-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .subpanel-link {
+        flex-shrink: 0;
+    }
+    
+    .embed-content-header, .embed-content-body {
+        margin: 0 20px;
+    }
+    
+    .code-snippet-pre {
+        padding: 16px;
+    }
+}
