@@ -8,23 +8,21 @@ import AccountForm from "../components/AccountForm/AccountForm";
 import UserForm from "../components/UserForm/UserForm";
 import EmbedForm from "../components/EmbedForm/EmbedForm";
 import SubscriptionForm from "../components/SubscriptionForm/SubscriptionForm";
-import { TiUserOutline } from "react-icons/ti";
-import { FiUsers } from "react-icons/fi";
-import { BiDollar } from "react-icons/bi";
-import { IoSendOutline } from "react-icons/io5";
+import { FiCalendar, FiFilter, FiMessageSquare, FiEye, FiDownload } from "react-icons/fi";
+import LeadsForm from "../components/LeadsForm/LeadsForm";  
 
-function Accounts() {
+function Leads() {
   const location = useLocation();
   const navigate = useNavigate();
   const [selectedOrg, setSelectedOrg] = useState("Buzz Interactive");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("account");
+  const [activeTab, setActiveTab] = useState("This Month");
 
   // Sync activeTab with URL
   useEffect(() => {
     const pathParts = location.pathname.split("/").filter(Boolean);
     const lastPart = pathParts[pathParts.length - 1];
-    
+
     if (pathParts.length === 1 && pathParts[0] === "account") {
       setActiveTab("account");
     } else if (["users", "subscriptions", "embed"].includes(lastPart)) {
@@ -33,11 +31,9 @@ function Accounts() {
   }, [location.pathname]);
 
   const handleTabChange = (tabId) => {
-    if (tabId === "account") {
-      navigate("/account");
-    } else {
-      navigate(`/account/${tabId}`);
-    }
+    setActiveTab(tabId);
+    // Note: Removed the hardcoded navigation to /account since Leads should probably stay on /leads
+    // unless the user specifically wants to jump between pages via these tabs.
   };
 
   const userOptions = [
@@ -70,10 +66,11 @@ function Accounts() {
   ];
 
   const panelLinks = [
-    { id: "account", label: "Account", icon: <TiUserOutline /> },
-    { id: "users", label: "Users", icon: <FiUsers /> },
-    { id: "subscriptions", label: "Subscriptions", icon: <BiDollar /> },
-    { id: "embed", label: "Embed", icon: <IoSendOutline /> },
+    { id: "This Month", label: "This Month", icon: <FiCalendar /> },
+    { id: "Filter", label: "Filter", icon: <FiFilter /> },
+    { id: "Filter Response", label: "Filter Response", icon: <FiMessageSquare /> },
+    { id: "View", label: "View", icon: <FiEye /> },
+    { id: "Export CSV", label: "Export CSV", icon: <FiDownload /> },
   ];
 
   return (
@@ -89,20 +86,24 @@ function Accounts() {
       />
 
       {/* Conditional Form Rendering */}
-      {activeTab === "account" ? (
-        <AccountForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
-      ) : activeTab === "users" ? (
+      {activeTab === "This Month" ? (
+        <LeadsForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
+      ) : activeTab === "Filter" ? (
         <UserForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
-      ) : activeTab === "subscriptions" ? (
+      ) : activeTab === "Filter Response" ? (
         <SubscriptionForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
-      ) : activeTab === "embed" ? (
+      ) : activeTab === "View" ? (
         <EmbedForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
+      ) : activeTab === "Export CSV" ? (
+        <AccountForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
       ) : (
         /* Fallback to show navigation even on other tabs for consistency */
-        <AccountForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
+        // <AccountForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />?
+        <LeadsForm activeTab={activeTab} onTabChange={handleTabChange} links={panelLinks} />
+        
       )}
     </div>
   );
 }
 
-export default Accounts;
+export default Leads;

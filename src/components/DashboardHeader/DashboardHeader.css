@@ -1,0 +1,223 @@
+.dashboard-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(
+        90.11deg,
+        #FAF7E6 2.84%,
+        #EAD5D5 32.07%,
+        #F6D6CE 55.07%,
+        #F8F5D6 78.07%,
+        #FFFDF6 102.51%
+    );
+    height: 85px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* border: 2px solid; */
+}
+
+.dashboard-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.dashboard-header-logo p {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #6D4AF7;
+    margin: 0;
+}
+
+.dashboard-header-org-container {
+    flex-shrink: 0;
+}
+
+.dashboard-header-nav-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.dashboard-header-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.dashboard-header-bell-icon, .dashboard-header-msg-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-header-user-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dashboard-header-user-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eee;
+}
+
+.dashboard-header-user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dashboard-header-user-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header-user-text {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    color: #000;
+}
+
+.dashboard-header-user-dept {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #B2B0B3;
+    margin: 0;
+}
+
+.dashboard-header-hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+    color: #333;
+    transition: all 0.25s ease;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin-left: auto;
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 1200px) {
+    .dashboard-header {
+        padding: 0 3%;
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-header {
+        padding: 15px 5%;
+        height: auto;
+    }
+
+    .dashboard-header-nav-container {
+        order: 4;
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        padding-top: 10px;
+    }
+
+    .dashboard-header-logo {
+        flex: 1;
+    }
+
+    .dashboard-header-org-container {
+        order: 2;
+    }
+
+    .dashboard-header-action {
+        order: 3;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-header
+    {
+         height: max-content !important;
+         /* border: 2px solid; */
+    }
+
+    .dashboard-header-logo
+    {
+        /* border: 2px solid; */
+        display: flex;
+        justify-content: flex-start;
+    }
+    .dashboard-header-user-name {
+        display: none;
+    }
+
+    .dashboard-header-hamburger-btn {
+        display: flex;
+        order: 3;
+        max-width: 100%;
+        justify-content: flex-end;
+    }
+
+    .dashboard-header-action {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        background: #FFFFFF;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 16px;
+        flex-direction: column;
+        gap: 14px;
+        z-index: 200;
+        min-width: 220px;
+        animation: dashboard-slideDown 0.25s ease;
+    }
+
+    .dashboard-header-action.mobile-open {
+        display: flex;
+    }
+
+    .dashboard-header-action.mobile-open .dashboard-header-user-name {
+        display: flex;
+    }
+
+    @keyframes dashboard-slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        gap: 10px;
+    }
+
+    .dashboard-header-nav-container {
+        gap: 10px;
+    }
+}

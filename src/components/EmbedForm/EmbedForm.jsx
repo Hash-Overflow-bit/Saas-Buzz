@@ -8,16 +8,12 @@ import { FaWordpress } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { LuLayoutTemplate } from "react-icons/lu";
 import Effect from "../BackgraoudTemplaeEffect/Effect";
+import PanelLinks from "../PanelLinks/PanelLinks";
 
-function EmbedForm({ activeTab, onTabChange }) {
+function EmbedForm({ activeTab, onTabChange, links }) {
   const [activeSubTab, setActiveSubTab] = useState("website");
 
-  const panelLinks = [
-    { id: "account", label: "Account", icon: <TiUserOutline /> },
-    { id: "users", label: "Users", icon: <FiUsers /> },
-    { id: "subscriptions", label: "Subscriptions", icon: <BiDollar /> },
-    { id: "embed", label: "Embed", icon: <IoSendOutline /> },
-  ];
+
 
   const subPanelLinks = [
     { id: "website", label: "Website", icon: <FiMonitor /> },
@@ -42,19 +38,14 @@ function EmbedForm({ activeTab, onTabChange }) {
       <Effect />
 
       <div className="accounts-formInput-container">
-        {/* Panel btns */}
-        <div className="account-panel-container">
-          {panelLinks.map((link) => (
-            <div
-              className={`panel-links ${activeTab === link.id ? "active" : ""}`}
-              key={link.id}
-              onClick={() => onTabChange(link.id)}
-            >
-              <span className="panel-links-icon">{link.icon}</span>
-              <span className="panel-links-label">{link.label}</span>
-            </div>
-          ))}
-        </div>
+        {links && (
+          <PanelLinks
+            links={links}
+            activeTab={activeTab}
+            onTabChange={onTabChange}
+          />
+        )}
+
 
         {/* Sub Panel Navigation */}
         <div className="embed-subpanel-container">

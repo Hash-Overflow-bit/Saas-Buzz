@@ -11,14 +11,10 @@ import { HiDotsVertical } from "react-icons/hi";
 import InputFields from "../InputFields/InputFields";
 import Button from "../Button/Button";
 import Effect from "../BackgraoudTemplaeEffect/Effect";
+import PanelLinks from "../PanelLinks/PanelLinks";
 
-function UserForm({ activeTab, onTabChange }) {
-  const panelLinks = [
-    { id: "account", label: "Account", icon: <TiUserOutline /> },
-    { id: "users", label: "Users", icon: <FiUsers /> },
-    { id: "subscriptions", label: "Subscriptions", icon: <BiDollar /> },
-    { id: "embed", label: "Embed", icon: <IoSendOutline /> },
-  ];
+function UserForm({ activeTab, onTabChange, links }) {
+
 
   const InputConfig = [
     {
@@ -56,19 +52,14 @@ function UserForm({ activeTab, onTabChange }) {
 
       {/* accounts formInput container */}
       <div className="accounts-formInput-container">
-        {/* Panel btns */}
-        <div className="account-panel-container">
-          {panelLinks.map((link) => (
-            <div
-              className={`panel-links ${activeTab === link.id ? "active" : ""}`}
-              key={link.id}
-              onClick={() => onTabChange(link.id)}
-            >
-              <span className="panel-links-icon">{link.icon}</span>
-              <span className="panel-links-label">{link.label}</span>
-            </div>
-          ))}
-        </div>
+        {links && (
+          <PanelLinks
+            links={links}
+            activeTab={activeTab}
+            onTabChange={onTabChange}
+          />
+        )}
+
 
         {/* User Information */}
         <div className="accounts-divider-container">

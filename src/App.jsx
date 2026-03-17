@@ -7,6 +7,7 @@ import VerifyNumber from "./Pages/VerifyNumber";
 import ForgetPassword from "./Pages/ForgetPassword";
 import Dashboard from "./Pages/Dashboard";
 import Accounts from "./Pages/Accounts";
+import Leads from "./Pages/Leads";  
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/forgetpassword" element={<ForgetPassword/>} />
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/account/*" element={<Accounts/>}/>
+      <Route path="/leads" element={<Leads/>}/>
     </Routes>
   );
 }

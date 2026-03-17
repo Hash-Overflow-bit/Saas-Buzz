@@ -5,16 +5,12 @@ import { FiUsers } from "react-icons/fi";
 import { BiDollar } from "react-icons/bi";
 import { IoSendOutline, IoClose } from "react-icons/io5";
 import Effect from "../BackgraoudTemplaeEffect/Effect";
+import PanelLinks from "../PanelLinks/PanelLinks";
 
-function SubscriptionForm({ activeTab, onTabChange }) {
+function SubscriptionForm({ activeTab, onTabChange, links }) {
   const [billingCycle, setBillingCycle] = useState("annual");
 
-  const panelLinks = [
-    { id: "account", label: "Account", icon: <TiUserOutline /> },
-    { id: "users", label: "Users", icon: <FiUsers /> },
-    { id: "subscriptions", label: "Subscriptions", icon: <BiDollar /> },
-    { id: "embed", label: "Embed", icon: <IoSendOutline /> },
-  ];
+
 
   const plans = [
     {
@@ -85,19 +81,14 @@ function SubscriptionForm({ activeTab, onTabChange }) {
       <Effect />
 
       <div className="accounts-formInput-container">
-        {/* Panel btns */}
-        <div className="account-panel-container">
-          {panelLinks.map((link) => (
-            <div
-              className={`panel-links ${activeTab === link.id ? "active" : ""}`}
-              key={link.id}
-              onClick={() => onTabChange(link.id)}
-            >
-              <span className="panel-links-icon">{link.icon}</span>
-              <span className="panel-links-label">{link.label}</span>
-            </div>
-          ))}
-        </div>
+        {links && (
+          <PanelLinks
+            links={links}
+            activeTab={activeTab}
+            onTabChange={onTabChange}
+          />
+        )}
+
 
         {/* Pricing Header */}
         <div className="pricing-header">
